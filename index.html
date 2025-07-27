@@ -127,6 +127,53 @@
             line-height: 1.4;
         }
 
+        /* モード選択画面のスタイル */
+        .mode-selector {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mode-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .selected-range-info {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem auto 2rem auto;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .selected-range-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+        }
+
+        .selected-range-detail {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .selected-range-words {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.3;
+            max-height: 60px;
+            overflow-y: auto;
+        }
+
         .mode-buttons {
             display: flex;
             gap: 1rem;
@@ -652,7 +699,6 @@
         }
 
         .score-display {
-            display: none; /* スコア表示ボックスを非表示 */
             text-align: center;
             background: #e9ecef;
             padding: 0.8rem;
@@ -819,6 +865,14 @@
                 gap: 0.8rem;
             }
 
+            .mode-title {
+                font-size: 1.5rem;
+            }
+
+            .selected-range-info {
+                padding: 1rem;
+            }
+
             .options {
                 grid-template-columns: 1fr 1fr;
                 gap: 0.6rem;
@@ -834,8 +888,8 @@
                 flex-direction: row;
                 justify-content: space-between;
                 gap: 0.8rem;
-                margin-top: 1rem; /* 上のマージンを調整 */
-                padding-top: 0; /* パディングを削除 */
+                margin-top: 0.5rem;
+                padding-top: 0.5rem;
                 align-items: center;
             }
 
@@ -855,7 +909,7 @@
             }
 
             .quiz-container {
-                height: auto; /* 高さを自動調整に変更 */
+                height: calc(100vh - 140px);
             }
 
             .question {
@@ -913,9 +967,22 @@
                         <!-- 範囲オプションは動的に生成されます -->
                     </div>
                     <div id="errorMessage" class="error-message" style="display: none;"></div>
+                </div>
+            </div>
+
+            <!-- モード選択画面 -->
+            <div id="modeScreen" class="screen">
+                <div class="mode-selector">
+                    <button class="btn btn-back" onclick="goBackToRangeSelection()">← 範囲選択に戻る</button>
+                    <h2 class="mode-title">学習モードを選択してください</h2>
+                    <div class="selected-range-info">
+                        <div class="selected-range-title" id="selectedRangeTitle"></div>
+                        <div class="selected-range-detail" id="selectedRangeDetail"></div>
+                        <div class="selected-range-words" id="selectedRangeWords"></div>
+                    </div>
                     <div class="mode-buttons">
-                        <button class="btn btn-primary" onclick="startLearningMode()" id="learningBtn" disabled>学習モード</button>
-                        <button class="btn btn-secondary" onclick="startTestMode()" id="testBtn" disabled>テストモード</button>
+                        <button class="btn btn-primary" onclick="startLearningMode()">📚 学習モード</button>
+                        <button class="btn btn-secondary" onclick="startTestMode()">📝 テストモード</button>
                     </div>
                 </div>
             </div>
@@ -923,7 +990,7 @@
             <!-- 学習モード画面 -->
             <div id="learningScreen" class="screen">
                 <div class="header-controls">
-                    <button class="btn btn-back" onclick="goBack()">← 戻る</button>
+                    <button class="btn btn-back" onclick="goBackToModeSelection()">← モード選択に戻る</button>
                     <div class="speed-controls">
                         <button class="speed-btn" onclick="adjustSpeed(-0.1)" id="speedDownBtn">−</button>
                         <div class="speed-display" id="speedDisplay">×0.8</div>
@@ -944,7 +1011,7 @@
 
             <!-- テストモード画面 -->
             <div id="testScreen" class="screen">
-                <button class="btn btn-back" onclick="goBack()">← 戻る</button>
+                <button class="btn btn-back" onclick="goBackToModeSelection()">← モード選択に戻る</button>
                 <div class="quiz-container">
                     <div class="score-display">
                         <h3>スコア</h3>
@@ -971,7 +1038,7 @@
                     <div id="quizResult" style="display: none;"></div>
                     <div class="navigation">
                         <div class="progress" id="testProgress"></div>
-                        <div class="progress" id="testScoreDisplay">0 / 0</div>
+                        <div class="score" id="scoreDisplay">0 / 0</div>
                     </div>
                 </div>
             </div>
@@ -985,6 +1052,7 @@
         let startNo = 1;
         let endNo = 10;
         let selectedRange = null;
+        let selectedRangeInfo = null;
         let quizQuestions = [];
         let currentQuestionIndex = 0;
         let score = 0;
@@ -1030,7 +1098,7 @@
                 
                 const rangeOption = document.createElement('div');
                 rangeOption.className = 'range-option';
-                rangeOption.onclick = () => selectRange(startNo, endNo);
+                rangeOption.onclick = () => selectRange(setNum, startNo, endNo, wordsInSet);
                 
                 rangeOption.innerHTML = `
                     <div class="range-title">第${setNum}セット</div>
@@ -1175,7 +1243,8 @@
             `;
         }
         
-        function selectRange(start, end) {
+        // 範囲選択
+        function selectRange(setNum, start, end, wordsInSet) {
             // 既存の選択を解除
             document.querySelectorAll('.range-option').forEach(option => {
                 option.classList.remove('selected');
@@ -1184,12 +1253,50 @@
             // 新しい選択を設定
             event.target.closest('.range-option').classList.add('selected');
             selectedRange = { start, end };
+            selectedRangeInfo = {
+                setNum: setNum,
+                start: start,
+                end: end,
+                words: wordsInSet
+            };
             startNo = start;
             endNo = end;
             
-            // ボタンを有効化
-            document.getElementById('learningBtn').disabled = false;
-            document.getElementById('testBtn').disabled = false;
+            hideError();
+            
+            // モード選択画面に遷移
+            showModeSelection();
+        }
+
+        // モード選択画面を表示
+        function showModeSelection() {
+            if (!selectedRangeInfo) return;
+            
+            // 選択された範囲の情報を表示
+            document.getElementById('selectedRangeTitle').textContent = `第${selectedRangeInfo.setNum}セット`;
+            document.getElementById('selectedRangeDetail').textContent = `単語 ${selectedRangeInfo.start}〜${selectedRangeInfo.end}`;
+            document.getElementById('selectedRangeWords').textContent = selectedRangeInfo.words;
+            
+            showScreen('modeScreen');
+        }
+
+        // 範囲選択に戻る
+        function goBackToRangeSelection() {
+            showScreen('rangeScreen');
+            // 選択状態をリセット
+            document.querySelectorAll('.range-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            selectedRange = null;
+            selectedRangeInfo = null;
+        }
+
+        // モード選択に戻る
+        function goBackToModeSelection() {
+            showScreen('modeScreen');
+            currentIndex = 0;
+            currentQuestionIndex = 0;
+            score = 0;
         }
 
         // 範囲を検証
@@ -1514,11 +1621,6 @@
         // スコアを更新
         function updateScore() {
             document.getElementById('scoreDisplay').textContent = `${score} / ${totalQuestions}`;
-            // テストモード下部のスコア表示も更新
-            const testScoreDisplay = document.getElementById('testScoreDisplay');
-            if (testScoreDisplay) {
-                testScoreDisplay.textContent = `${score} / ${totalQuestions}`;
-            }
         }
 
         // テスト終了
@@ -1537,7 +1639,7 @@
             }
 
             alert(message);
-            goBack();
+            goBackToModeSelection();
         }
 
         // 画面を表示
@@ -1547,19 +1649,9 @@
             document.getElementById(screenId).classList.add('active');
         }
 
-        // 戻る
+        // 後方互換性のための関数（元のgoBack関数）
         function goBack() {
-            showScreen('rangeScreen');
-            currentIndex = 0;
-            currentQuestionIndex = 0;
-            score = 0;
-            selectedRange = null;
-            document.getElementById('learningBtn').disabled = true;
-            document.getElementById('testBtn').disabled = true;
-            document.querySelectorAll('.range-option').forEach(option => {
-                option.classList.remove('selected');
-            });
-            hideError();
+            goBackToModeSelection();
         }
 
         // ページ読み込み時に単語データを読み込み
