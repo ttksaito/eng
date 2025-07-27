@@ -1,0 +1,191 @@
+{
+  "ability": {
+    "level": "A1",
+    "No":1,
+    "Pronunciation": {
+      "symbol": "/əˈbɪləti/",
+      "Pronunciation_point1": "第2音節「bil」にアクセントを置く",
+      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
+      "Pronunciation_point3": "語尾の「ty」は/ti/ではなく/təi/で発音"
+    },
+    "definition1": "何かを行うために必要な技能や才能",
+    "definition2": "特定のタスクを成功させる能力や資質",
+    "definition3": "身体的または精神的な機能や力",
+    "collocation1": "natural ability（天性の才能）",
+    "collocation2": "have the ability to（～する能力がある）",
+    "collocation3": "ability to learn（学習能力）",
+    "collocation4": "physical ability（身体能力）",
+    "collocation5": "develop one's ability（能力を伸ばす）",
+    "Example_sentence": "She has the ability to solve complex mathematical problems quickly.（彼女は複雑な数学の問題を素早く解く能力を持っている。）"
+  },
+  "abroad": {
+    "level": "A1",
+    "No":2,
+    "Pronunciation": {
+      "symbol": "/əˈbrɔːd/",
+      "Pronunciation_point1": "「broad」の部分にアクセントを置く",
+      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
+      "Pronunciation_point3": "「oa」は長い/ɔː/音で発音"
+    },
+    "definition1": "自国以外の外国で、または外国に",
+    "definition2": "海外の場所や地域において",
+    "collocation1": "go abroad（海外に行く）",
+    "collocation2": "study abroad（留学する）",
+    "collocation3": "travel abroad（海外旅行をする）",
+    "collocation4": "live abroad（海外に住む）",
+    "collocation5": "from abroad（海外から）",
+    "Example_sentence": "Many students choose to study abroad to experience different cultures.（多くの学生が異なる文化を体験するために留学を選ぶ。）"
+  },
+  "accept": {
+    "level": "A1",
+    "No":3,
+    "Pronunciation": {
+      "symbol": "/əkˈsept/",
+      "Pronunciation_point1": "第2音節「cept」にアクセントを置く",
+      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
+      "Pronunciation_point3": "「cc」は/k/音一つで発音"
+    },
+    "definition1": "提供されたものを受け取ることに同意する",
+    "definition2": "状況や事実を現実として認める",
+    "definition3": "招待や申し出を承諾する",
+    "collocation1": "accept an offer（申し出を受け入れる）",
+    "collocation2": "accept responsibility（責任を受け入れる）",
+    "collocation3": "accept a challenge（挑戦を受け入れる）",
+    "collocation4": "widely accepted（広く受け入れられた）",
+    "collocation5": "accept payment（支払いを受け入れる）",
+    "Example_sentence": "I'm happy to accept your invitation to the wedding ceremony.（結婚式のご招待を喜んでお受けいたします。）"
+  },
+  "acceptable": {
+    "level": "A1",
+    "No":4,
+    "Pronunciation": {
+      "symbol": "/əkˈseptəbl/",
+      "Pronunciation_point1": "第2音節「cept」にアクセントを置く",
+      "Pronunciation_point2": "語尾の「able」は/əbl/で発音",
+      "Pronunciation_point3": "4音節で区切って発音：/ək-ˈsep-tə-bl/"
+    },
+    "definition1": "満足できる標準に達している、受け入れ可能な",
+    "definition2": "適切で許容できる程度の",
+    "definition3": "社会的に認められる、妥当な",
+    "collocation1": "acceptable behavior（受け入れられる行動）",
+    "collocation2": "acceptable level（許容レベル）",
+    "collocation3": "socially acceptable（社会的に受け入れられる）",
+    "collocation4": "acceptable quality（受け入れ可能な品質）",
+    "collocation5": "find acceptable（受け入れ可能だと思う）",
+    "Example_sentence": "The quality of this product is acceptable for its price range.（この製品の品質は、その価格帯としては受け入れ可能である。）"
+  },
+  "account": {
+    "level": "A1",
+    "No":5,
+    "Pronunciation": {
+      "symbol": "/əˈkaʊnt/",
+      "Pronunciation_point1": "第2音節「count」にアクセントを置く",
+      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
+      "Pronunciation_point3": "「ou」は/aʊ/の二重母音で発音"
+    },
+    "definition1": "銀行や会社における金銭の記録や管理",
+    "definition2": "説明や報告、記述",
+    "definition3": "重要性や価値を持つこと",
+    "collocation1": "bank account（銀行口座）",
+    "collocation2": "take into account（考慮に入れる）",
+    "collocation3": "account for（説明する、占める）",
+    "collocation4": "detailed account（詳細な説明）",
+    "collocation5": "open an account（口座を開設する）",
+    "Example_sentence": "Please take my suggestions into account when making your decision.（決定を下す際には私の提案を考慮に入れてください。）"
+  },
+  "achieve": {
+    "level": "A2",
+    "No":6,
+    "Pronunciation": {
+      "symbol": "/əˈtʃiːv/",
+      "Pronunciation_point1": "第2音節「chieve」にアクセントを置く",
+      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
+      "Pronunciation_point3": "「ch」は/tʃ/音で発音"
+    },
+    "definition1": "努力や技能によって何かを成功させる",
+    "definition2": "目標や目的を達成する",
+    "definition3": "優れた結果を得る",
+    "collocation1": "achieve success（成功を収める）",
+    "collocation2": "achieve a goal（目標を達成する）",
+    "collocation3": "achieve results（結果を出す）",
+    "collocation4": "achieve excellence（優秀さを達成する）",
+    "collocation5": "achieve recognition（認知を得る）",
+    "Example_sentence": "Hard work and dedication helped her achieve her dream of becoming a doctor.（努力と献身によって、彼女は医師になる夢を実現した。）"
+  },
+  "action": {
+    "level": "A1",
+    "No":7,
+    "Pronunciation": {
+      "symbol": "/ˈækʃən/",
+      "Pronunciation_point1": "第1音節「ac」にアクセントを置く",
+      "Pronunciation_point2": "「a」は短い/æ/音で発音",
+      "Pronunciation_point3": "「tion」は/ʃən/で発音"
+    },
+    "definition1": "何かを行う行為や過程",
+    "definition2": "具体的な行動や措置",
+    "definition3": "動きや活動",
+    "collocation1": "take action（行動を起こす）",
+    "collocation2": "immediate action（即座の行動）",
+    "collocation3": "course of action（行動方針）",
+    "collocation4": "action plan（行動計画）",
+    "collocation5": "legal action（法的措置）",
+    "Example_sentence": "The government must take immediate action to address climate change.（政府は気候変動に対処するため即座に行動を起こさなければならない。）"
+  },
+  "active": {
+    "level": "A2",
+    "No":8,
+    "Pronunciation": {
+      "symbol": "/ˈæktɪv/",
+      "Pronunciation_point1": "第1音節「ac」にアクセントを置く",
+      "Pronunciation_point2": "「a」は短い/æ/音で発音",
+      "Pronunciation_point3": "「tive」は/tɪv/で発音"
+    },
+    "definition1": "活発に動いている、エネルギッシュな",
+    "definition2": "積極的に参加している",
+    "definition3": "現在進行中の、作動している",
+    "collocation1": "active lifestyle（活動的なライフスタイル）",
+    "collocation2": "active participation（積極的な参加）",
+    "collocation3": "active member（活発なメンバー）",
+    "collocation4": "physically active（身体的に活発な）",
+    "collocation5": "active role（積極的な役割）",
+    "Example_sentence": "Regular exercise helps maintain an active and healthy lifestyle.（定期的な運動は活発で健康的なライフスタイルの維持に役立つ。）"
+  },
+  "activity": {
+    "level": "A1",
+    "No":9,
+    "Pronunciation": {
+      "symbol": "/ækˈtɪvəti/",
+      "Pronunciation_point1": "第2音節「tiv」にアクセントを置く",
+      "Pronunciation_point2": "「a」は短い/æ/音で発音",
+      "Pronunciation_point3": "語尾「ty」は/ti/で発音"
+    },
+    "definition1": "特定の目的を持った行動や作業",
+    "definition2": "娯楽や運動などの活動",
+    "definition3": "忙しさや活発さの状態",
+    "collocation1": "outdoor activity（屋外活動）",
+    "collocation2": "physical activity（身体活動）",
+    "collocation3": "learning activity（学習活動）",
+    "collocation4": "social activity（社会活動）",
+    "collocation5": "business activity（事業活動）",
+    "Example_sentence": "Swimming is an excellent physical activity for people of all ages.（水泳はすべての年齢の人々にとって優れた身体活動である。）"
+  },
+  "actual": {
+    "level": "B1",
+    "No":10,
+    "Pronunciation": {
+      "symbol": "/ˈæktʃuəl/",
+      "Pronunciation_point1": "第1音節「ac」にアクセントを置く",
+      "Pronunciation_point2": "「a」は短い/æ/音で発音",
+      "Pronunciation_point3": "「tual」は/tʃuəl/で発音"
+    },
+    "definition1": "実際の、現実の（想像や理論ではない）",
+    "definition2": "真の、本当の",
+    "definition3": "現在存在する",
+    "collocation1": "actual fact（実際の事実）",
+    "collocation2": "actual cost（実際の費用）",
+    "collocation3": "actual situation（実際の状況）",
+    "collocation4": "actual results（実際の結果）",
+    "collocation5": "actual experience（実際の経験）",
+    "Example_sentence": "The actual cost of the project was much higher than the original estimate.（プロジェクトの実際の費用は当初の見積もりよりもはるかに高かった。）"
+  }
+}
