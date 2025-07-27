@@ -58,14 +58,18 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+            overflow: auto;
         }
 
         .screen {
             display: none;
+            height: 100%;
+            overflow: auto;
         }
 
         .screen.active {
-            display: block;
+            display: flex;
+            flex-direction: column;
         }
 
         .range-selector {
@@ -123,35 +127,6 @@
             line-height: 1.4;
         }
 
-        .range-inputs {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .range-inputs label {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .range-inputs input {
-            width: 80px;
-            padding: 0.5rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .range-inputs span {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #666;
-        }
-
         .mode-buttons {
             display: flex;
             gap: 1rem;
@@ -201,6 +176,63 @@
 
         .btn-back:hover {
             background: #5a6268;
+        }
+
+        .header-controls {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .speed-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.3rem;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .speed-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .speed-btn:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .speed-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .speed-display {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            min-width: 45px;
+            text-align: center;
+            font-weight: bold;
+            color: #495057;
         }
 
         .word-card {
@@ -344,6 +376,7 @@
             border-radius: 10px;
             margin-bottom: 1rem;
             overflow: hidden;
+            width: 100%;
         }
 
         .quiz-tab {
@@ -356,11 +389,13 @@
             border: none;
             font-weight: bold;
             font-size: 0.9rem;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .quiz-tab.active {
-            background: #007bff;
-            color: white;
+            background: #007bff !important;
+            color: white !important;
         }
 
         .quiz-tab:hover:not(.active) {
@@ -369,10 +404,12 @@
 
         .tab-content {
             display: none;
+            flex: 1;
+            overflow: auto;
         }
 
         .tab-content.active {
-            display: block;
+            display: block !important;
         }
 
         .word-info {
@@ -476,6 +513,11 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .word-info .example-sentence .play-btn {
+            flex-shrink: 0;
         }
 
         .question {
@@ -550,12 +592,18 @@
 
         .quiz-buttons {
             text-align: center;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
         .quiz-buttons .btn {
-            margin: 0.5rem;
-            min-width: 120px;
+            margin: 0.3rem;
+            min-width: 100px;
+            width: 80%;
+            max-width: 200px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0.5rem;
         }
 
         .quiz-result.correct {
@@ -629,6 +677,38 @@
 
             .content {
                 padding: 0.75rem;
+                overflow: auto;
+            }
+
+            .header-controls {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.8rem;
+                flex-wrap: wrap;
+            }
+
+            .speed-controls {
+                justify-content: flex-end;
+                gap: 0.3rem;
+            }
+
+            .speed-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 0.9rem;
+            }
+
+            .speed-display {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.5rem;
+                min-width: 45px;
+            }
+
+            .btn-back {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
             }
 
             .word-title {
@@ -711,6 +791,22 @@
                 font-size: 0.85rem;
                 min-width: 100px;
             }
+
+            .quiz-buttons {
+                text-align: center;
+                margin-top: 0.8rem;
+            }
+
+            .quiz-buttons .btn {
+                margin: 0.3rem;
+                min-width: 100px;
+                width: 80%;
+                max-width: 200px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -743,7 +839,14 @@
 
             <!-- 学習モード画面 -->
             <div id="learningScreen" class="screen">
-                <button class="btn btn-back" onclick="goBack()">← 戻る</button>
+                <div class="header-controls">
+                    <button class="btn btn-back" onclick="goBack()">← 戻る</button>
+                    <div class="speed-controls">
+                        <button class="speed-btn" onclick="adjustSpeed(-0.1)" id="speedDownBtn">−</button>
+                        <div class="speed-display" id="speedDisplay">×0.8</div>
+                        <button class="speed-btn" onclick="adjustSpeed(0.1)" id="speedUpBtn">+</button>
+                    </div>
+                </div>
                 <div id="wordCard" class="word-card">
                     <!-- 単語カードの内容がここに表示される -->
                 </div>
@@ -802,6 +905,7 @@
         let currentQuestionIndex = 0;
         let score = 0;
         let totalQuestions = 0;
+        let speechRate = 0.8; // デフォルトの音声速度
 
         // データベースから単語データを読み込み
         async function loadWordsData() {
@@ -827,24 +931,57 @@
             document.getElementById('errorMessage').style.display = 'none';
         }
 
+        // 音声再生速度を調整
+        function adjustSpeed(delta) {
+            speechRate = Math.max(0.5, Math.min(2.0, speechRate + delta));
+            updateSpeedDisplay();
+            updateSpeedButtons();
+        }
+
+        // 速度表示を更新
+        function updateSpeedDisplay() {
+            document.getElementById('speedDisplay').textContent = `×${speechRate.toFixed(1)}`;
+        }
+
+        // 速度ボタンの状態を更新
+        function updateSpeedButtons() {
+            document.getElementById('speedDownBtn').disabled = speechRate <= 0.5;
+            document.getElementById('speedUpBtn').disabled = speechRate >= 2.0;
+        }
+
         // タブを切り替え
         function switchTab(tabName) {
+            console.log('Switching to tab:', tabName); // デバッグ用
+            
             // タブボタンの状態を更新
-            document.querySelectorAll('.quiz-tab').forEach(tab => {
+            const tabs = document.querySelectorAll('.quiz-tab');
+            tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
             
             // タブコンテンツの表示を更新
-            document.querySelectorAll('.tab-content').forEach(content => {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
                 content.classList.remove('active');
+                content.style.display = 'none';
             });
             
             if (tabName === 'quiz') {
-                document.querySelector('.quiz-tab:first-child').classList.add('active');
-                document.getElementById('quizTab').classList.add('active');
+                const quizTab = document.querySelector('.quiz-tab:first-child');
+                const quizContent = document.getElementById('quizTab');
+                if (quizTab) quizTab.classList.add('active');
+                if (quizContent) {
+                    quizContent.classList.add('active');
+                    quizContent.style.display = 'block';
+                }
             } else if (tabName === 'study') {
-                document.querySelector('.quiz-tab:last-child').classList.add('active');
-                document.getElementById('studyTab').classList.add('active');
+                const studyTab = document.querySelector('.quiz-tab:last-child');
+                const studyContent = document.getElementById('studyTab');
+                if (studyTab) studyTab.classList.add('active');
+                if (studyContent) {
+                    studyContent.classList.add('active');
+                    studyContent.style.display = 'block';
+                }
                 displayCurrentWordInfo();
             }
         }
@@ -915,6 +1052,7 @@
                 </div>
             `;
         }
+        
         function selectRange(start, end) {
             // 既存の選択を解除
             document.querySelectorAll('.range-option').forEach(option => {
@@ -948,7 +1086,7 @@
             if ('speechSynthesis' in window) {
                 const utterance = new SpeechSynthesisUtterance(word);
                 utterance.lang = 'en-US';
-                utterance.rate = 0.8;
+                utterance.rate = speechRate; // 調整可能な速度を使用
                 speechSynthesis.speak(utterance);
             } else {
                 alert('お使いのブラウザは音声再生に対応していません。');
@@ -962,7 +1100,7 @@
                 const englishText = sentence.replace(/（.*?）/g, '').replace(/<[^>]*>/g, '').trim();
                 const utterance = new SpeechSynthesisUtterance(englishText);
                 utterance.lang = 'en-US';
-                utterance.rate = 0.7; // 例文は少しゆっくり
+                utterance.rate = speechRate * 0.9; // 例文は単語より少しゆっくり
                 speechSynthesis.speak(utterance);
             } else {
                 alert('お使いのブラウザは音声再生に対応していません。');
@@ -993,6 +1131,8 @@
             currentIndex = 0;
             showScreen('learningScreen');
             displayWord();
+            updateSpeedDisplay();
+            updateSpeedButtons();
         }
 
         // 単語カードを表示
@@ -1053,18 +1193,6 @@
 
             updateLearningProgress();
             updateNavigationButtons();
-        }
-
-        // 音声再生機能
-        function playPronunciation(word) {
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(word);
-                utterance.lang = 'en-US';
-                utterance.rate = 0.8;
-                speechSynthesis.speak(utterance);
-            } else {
-                alert('お使いのブラウザは音声再生に対応していません。');
-            }
         }
 
         // 学習進捗を更新
@@ -1231,9 +1359,6 @@
                 option.style.pointerEvents = 'none';
             });
 
-            // 結果を表示
-            showQuizResult(isCorrect, question.correct);
-            
             // ボタンを更新
             document.getElementById('submitBtn').style.display = 'none';
             if (currentQuestionIndex < quizQuestions.length - 1) {
@@ -1243,16 +1368,6 @@
             }
 
             updateScore();
-        }
-
-        // クイズ結果を表示（不要になったため削除）
-        function showQuizResult(isCorrect, correctAnswer) {
-            // この関数は使用しません
-        }
-
-        // クイズ結果を非表示（不要になったため削除）
-        function hideQuizResult() {
-            // この関数は使用しません
         }
 
         // 次の問題へ
