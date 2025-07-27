@@ -28,7 +28,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px;
             transition: all 0.3s ease;
             min-height: calc(100vh - 1rem);
             display: flex;
@@ -235,44 +235,64 @@
             color: #495057;
         }
 
+        /* 学習モード専用のヘッダー非表示（デスクトップ・モバイル共通） */
+        #learningScreen .header {
+            display: none;
+        }
+
+        /* 学習モードのコンテンツ調整（デスクトップ・モバイル共通） */
+        #learningScreen .content {
+            padding-top: 1rem;
+        }
+
         .word-card {
             background: #f8f9fa;
             border-radius: 15px;
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .word-header {
+            grid-column: 1 / -1;
+            text-align: center;
         }
 
         .word-title {
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: bold;
             color: #333;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .word-level {
             display: inline-block;
             background: #28a745;
             color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            margin-bottom: 0.5rem;
         }
 
         .pronunciation {
             background: white;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 10px;
-            margin: 1rem 0;
             border-left: 4px solid #007bff;
+            grid-column: 1 / -1;
         }
 
         .pronunciation-symbol {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: bold;
             color: #007bff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -284,10 +304,10 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -299,22 +319,26 @@
 
         .pronunciation-points {
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #666;
+        }
+
+        /* デスクトップ版での横並びレイアウト */
+        .definitions-collocations-container {
+            display: contents;
         }
 
         .definitions, .collocations {
             background: white;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 10px;
-            margin: 1rem 0;
             text-align: left;
         }
 
         .definitions h3, .collocations h3 {
             color: #333;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
         }
 
         .definitions ul, .collocations ul {
@@ -323,8 +347,10 @@
         }
 
         .definitions li, .collocations li {
-            padding: 0.5rem 0;
+            padding: 0.4rem 0;
             border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         .definitions li:last-child, .collocations li:last-child {
@@ -333,12 +359,19 @@
 
         .example-sentence {
             background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 10px;
-            margin: 1rem 0;
             font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.5;
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .example-sentence .play-btn {
+            flex-shrink: 0;
         }
 
         .navigation {
@@ -660,6 +693,7 @@
                 margin: 0;
                 border-radius: 10px;
                 min-height: 100vh;
+                max-width: none;
             }
 
             .header {
@@ -678,6 +712,57 @@
             .content {
                 padding: 0.75rem;
                 overflow: auto;
+            }
+
+            /* モバイル版では元のレイアウトに戻す */
+            .word-card {
+                display: block;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .word-header {
+                margin-bottom: 1rem;
+            }
+
+            .word-title {
+                font-size: 1.8rem;
+            }
+
+            .pronunciation {
+                margin: 1rem 0;
+                padding: 1rem;
+            }
+
+            .pronunciation-symbol {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .play-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            /* モバイル版では縦並びに戻す */
+            .definitions-collocations-container {
+                display: block;
+            }
+
+            .definitions, .collocations {
+                margin: 1rem 0;
+            }
+
+            .example-sentence {
+                margin: 1rem 0;
+                display: block;
+                text-align: center;
+            }
+
+            .example-sentence .play-btn {
+                margin: 1rem auto 0 auto;
+                display: block;
             }
 
             .header-controls {
@@ -823,11 +908,7 @@
                 <div class="range-selector">
                     <h2>学習範囲を選択してください</h2>
                     <div class="range-options">
-                        <div class="range-option" onclick="selectRange(1, 10)">
-                            <div class="range-title">第1セット</div>
-                            <div class="range-detail">単語 1〜10</div>
-                            <div class="range-words">ability, abroad, accept, acceptable, account, achieve, action, active, activity, actual</div>
-                        </div>
+                        <!-- 範囲オプションは動的に生成されます -->
                     </div>
                     <div id="errorMessage" class="error-message" style="display: none;"></div>
                     <div class="mode-buttons">
@@ -913,9 +994,48 @@
                 const response = await fetch('database/word.json');
                 wordsData = await response.json();
                 console.log('単語データを読み込みました:', Object.keys(wordsData).length, '単語');
+                generateRangeOptions(); // 範囲オプションを動的生成
             } catch (error) {
                 console.error('単語データの読み込みに失敗しました:', error);
                 showError('単語データの読み込みに失敗しました。database/word.jsonファイルを確認してください。');
+            }
+        }
+
+        // 範囲オプションを動的に生成
+        function generateRangeOptions() {
+            if (!wordsData || Object.keys(wordsData).length === 0) return;
+            
+            // 単語データからNo順にソート
+            const sortedWords = Object.entries(wordsData).sort((a, b) => a[1].No - b[1].No);
+            const totalWords = sortedWords.length;
+            const wordsPerSet = 10; // 1セットあたりの単語数
+            const totalSets = Math.ceil(totalWords / wordsPerSet);
+            
+            const rangeOptionsContainer = document.querySelector('.range-options');
+            rangeOptionsContainer.innerHTML = ''; // 既存の内容をクリア
+            
+            for (let setNum = 1; setNum <= totalSets; setNum++) {
+                const startIndex = (setNum - 1) * wordsPerSet;
+                const endIndex = Math.min(startIndex + wordsPerSet - 1, totalWords - 1);
+                const startNo = sortedWords[startIndex][1].No;
+                const endNo = sortedWords[endIndex][1].No;
+                
+                // そのセットに含まれる単語のリストを作成
+                const wordsInSet = sortedWords.slice(startIndex, endIndex + 1)
+                    .map(([wordKey, wordData]) => wordKey)
+                    .join(', ');
+                
+                const rangeOption = document.createElement('div');
+                rangeOption.className = 'range-option';
+                rangeOption.onclick = () => selectRange(startNo, endNo);
+                
+                rangeOption.innerHTML = `
+                    <div class="range-title">第${setNum}セット</div>
+                    <div class="range-detail">単語 ${startNo}〜${endNo}</div>
+                    <div class="range-words">${wordsInSet}</div>
+                `;
+                
+                rangeOptionsContainer.appendChild(rangeOption);
             }
         }
 
@@ -1045,8 +1165,7 @@
 
                 <div class="example-sentence">
                     <div style="flex: 1;">
-                        <strong>📝 例文:</strong><br>
-                        ${wordData.Example_sentence}
+                        ${wordData.Example_sentence.replace(/（/g, '<br>（')}
                     </div>
                     <button class="play-btn" onclick="playExampleSentence(\`${wordData.Example_sentence.replace(/[`'"]/g, '')}\`)">▶</button>
                 </div>
@@ -1147,9 +1266,11 @@
             };
 
             wordCard.innerHTML = `
-                <div class="word-title">${word.key}</div>
-                <div class="word-level" style="background: ${levelColors[word.data.level] || '#6c757d'};">
-                    ${word.data.level}
+                <div class="word-header">
+                    <div class="word-title">${word.key}</div>
+                    <div class="word-level" style="background: ${levelColors[word.data.level] || '#6c757d'};">
+                        ${word.data.level}
+                    </div>
                 </div>
                 
                 <div class="pronunciation">
@@ -1164,30 +1285,33 @@
                     </div>
                 </div>
 
-                <div class="definitions">
-                    <h3>📖 意味・定義</h3>
-                    <ul>
-                        <li><strong>1.</strong> ${word.data.definition1}</li>
-                        <li><strong>2.</strong> ${word.data.definition2}</li>
-                        <li><strong>3.</strong> ${word.data.definition3}</li>
-                    </ul>
-                </div>
+                <div class="definitions-collocations-container">
+                    <div class="definitions">
+                        <h3>📖 意味・定義</h3>
+                        <ul>
+                            <li><strong>1.</strong> ${word.data.definition1}</li>
+                            <li><strong>2.</strong> ${word.data.definition2}</li>
+                            <li><strong>3.</strong> ${word.data.definition3}</li>
+                        </ul>
+                    </div>
 
-                <div class="collocations">
-                    <h3>🔗 よく使われる表現</h3>
-                    <ul>
-                        <li>${word.data.collocation1}</li>
-                        <li>${word.data.collocation2}</li>
-                        <li>${word.data.collocation3}</li>
-                        <li>${word.data.collocation4}</li>
-                        <li>${word.data.collocation5}</li>
-                    </ul>
+                    <div class="collocations">
+                        <h3>🔗 よく使われる表現</h3>
+                        <ul>
+                            <li>${word.data.collocation1}</li>
+                            <li>${word.data.collocation2}</li>
+                            <li>${word.data.collocation3}</li>
+                            <li>${word.data.collocation4}</li>
+                            <li>${word.data.collocation5}</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="example-sentence">
-                    <strong>📝 例文:</strong><br>
-                    ${word.data.Example_sentence}
-                    <button class="play-btn" onclick="playExampleSentence(\`${word.data.Example_sentence.replace(/[`'"]/g, '')}\`)" style="margin-left: 1rem;">▶</button>
+                    <div style="flex: 1;">
+                        ${word.data.Example_sentence.replace(/（/g, '<br>（')}
+                    </div>
+                    <button class="play-btn" onclick="playExampleSentence(\`${word.data.Example_sentence.replace(/[`'"]/g, '')}\`)">▶</button>
                 </div>
             `;
 
