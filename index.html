@@ -338,6 +338,146 @@
             flex-direction: column;
         }
 
+        .quiz-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .quiz-tab {
+            flex: 1;
+            padding: 0.8rem;
+            text-align: center;
+            background: #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .quiz-tab.active {
+            background: #007bff;
+            color: white;
+        }
+
+        .quiz-tab:hover:not(.active) {
+            background: #dee2e6;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .word-info {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .word-info .word-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .word-info .word-level {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .word-info .pronunciation {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            border-left: 3px solid #007bff;
+        }
+
+        .word-info .pronunciation-symbol {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .word-info .play-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .word-info .definitions, .word-info .collocations {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+        }
+
+        .word-info .definitions h4, .word-info .collocations h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .word-info .definitions ul, .word-info .collocations ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .word-info .definitions li, .word-info .collocations li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .word-info .definitions li:last-child, .word-info .collocations li:last-child {
+            border-bottom: none;
+        }
+
+        .word-info .example-sentence {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.8rem 0;
+            font-style: italic;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
         .question {
             background: #f8f9fa;
             padding: 1rem;
@@ -624,9 +764,24 @@
                         <h3>スコア</h3>
                         <div class="score" id="scoreDisplay">0 / 0</div>
                     </div>
-                    <div id="quizCard" class="question">
-                        <!-- クイズの内容がここに表示される -->
+                    
+                    <div class="quiz-tabs">
+                        <button class="quiz-tab active" onclick="switchTab('quiz')">クイズ</button>
+                        <button class="quiz-tab" onclick="switchTab('study')">学習内容</button>
                     </div>
+                    
+                    <div id="quizTab" class="tab-content active">
+                        <div id="quizCard" class="question">
+                            <!-- クイズの内容がここに表示される -->
+                        </div>
+                    </div>
+                    
+                    <div id="studyTab" class="tab-content">
+                        <div id="wordInfo" class="word-info">
+                            <!-- 学習内容がここに表示される -->
+                        </div>
+                    </div>
+                    
                     <div id="quizResult" style="display: none;"></div>
                     <div class="navigation">
                         <div class="progress" id="testProgress"></div>
@@ -672,7 +827,94 @@
             document.getElementById('errorMessage').style.display = 'none';
         }
 
-        // 範囲を選択
+        // タブを切り替え
+        function switchTab(tabName) {
+            // タブボタンの状態を更新
+            document.querySelectorAll('.quiz-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // タブコンテンツの表示を更新
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            if (tabName === 'quiz') {
+                document.querySelector('.quiz-tab:first-child').classList.add('active');
+                document.getElementById('quizTab').classList.add('active');
+            } else if (tabName === 'study') {
+                document.querySelector('.quiz-tab:last-child').classList.add('active');
+                document.getElementById('studyTab').classList.add('active');
+                displayCurrentWordInfo();
+            }
+        }
+
+        // 現在の問題の単語情報を表示
+        function displayCurrentWordInfo() {
+            if (currentQuestionIndex >= quizQuestions.length) return;
+            
+            const currentQuestion = quizQuestions[currentQuestionIndex];
+            const correctWord = currentQuestion.correct;
+            const wordData = wordsData[correctWord];
+            
+            if (!wordData) return;
+            
+            const levelColors = {
+                'A1': '#28a745',
+                'A2': '#ffc107',
+                'B1': '#dc3545'
+            };
+
+            const wordInfo = document.getElementById('wordInfo');
+            wordInfo.innerHTML = `
+                <div class="word-title">${correctWord}</div>
+                <div class="word-level" style="background: ${levelColors[wordData.level] || '#6c757d'};">
+                    ${wordData.level}
+                </div>
+                
+                <div class="pronunciation">
+                    <div class="pronunciation-symbol">
+                        ${wordData.Pronunciation.symbol}
+                        <button class="play-btn" onclick="playPronunciation('${correctWord}')">▶</button>
+                    </div>
+                    <div class="pronunciation-points">
+                        <div style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">
+                            • ${wordData.Pronunciation.Pronunciation_point1}<br>
+                            • ${wordData.Pronunciation.Pronunciation_point2}<br>
+                            • ${wordData.Pronunciation.Pronunciation_point3}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="definitions">
+                    <h4>📖 意味・定義</h4>
+                    <ul>
+                        <li><strong>1.</strong> ${wordData.definition1}</li>
+                        <li><strong>2.</strong> ${wordData.definition2}</li>
+                        <li><strong>3.</strong> ${wordData.definition3}</li>
+                    </ul>
+                </div>
+
+                <div class="collocations">
+                    <h4>🔗 よく使われる表現</h4>
+                    <ul>
+                        <li>${wordData.collocation1}</li>
+                        <li>${wordData.collocation2}</li>
+                        <li>${wordData.collocation3}</li>
+                        <li>${wordData.collocation4}</li>
+                        <li>${wordData.collocation5}</li>
+                    </ul>
+                </div>
+
+                <div class="example-sentence">
+                    <div style="flex: 1;">
+                        <strong>📝 例文:</strong><br>
+                        ${wordData.Example_sentence}
+                    </div>
+                    <button class="play-btn" onclick="playExampleSentence(\`${wordData.Example_sentence.replace(/[`'"]/g, '')}\`)">▶</button>
+                </div>
+            `;
+        }
         function selectRange(start, end) {
             // 既存の選択を解除
             document.querySelectorAll('.range-option').forEach(option => {
@@ -868,6 +1110,8 @@
             score = 0;
             showScreen('testScreen');
             displayQuestion();
+            // 初期状態でクイズタブを表示
+            switchTab('quiz');
         }
 
         // クイズ問題を生成
@@ -1015,6 +1259,8 @@
         function nextQuestion() {
             currentQuestionIndex++;
             displayQuestion();
+            // クイズタブに自動で切り替え
+            switchTab('quiz');
         }
 
         // テスト進捗を更新
