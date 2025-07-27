@@ -326,6 +326,8 @@
         .nav-buttons {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .quiz-container {
@@ -526,6 +528,20 @@
                 gap: 0.8rem;
                 margin-top: 0.5rem;
                 padding-top: 0.5rem;
+                align-items: center;
+            }
+
+            .nav-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+                width: 100%;
+                align-items: center;
+            }
+
+            .nav-buttons .btn {
+                width: 80%;
+                max-width: 200px;
             }
 
             .quiz-container {
@@ -614,6 +630,7 @@
                         <div class="nav-buttons">
                             <button class="btn btn-primary" onclick="nextQuestion()" id="nextQuestionBtn" style="display: none;">次の問題</button>
                             <button class="btn btn-secondary" onclick="finishTest()" id="finishBtn" style="display: none;">テスト終了</button>
+                            <button class="btn btn-back" onclick="goBack()" id="backToMenuBtn" style="display: none;">メニューに戻る</button>
                         </div>
                     </div>
                 </div>
@@ -975,9 +992,9 @@
             // ボタンを更新
             document.getElementById('submitBtn').style.display = 'none';
             if (currentQuestionIndex < quizQuestions.length - 1) {
-                document.getElementById('nextQuestionBtn').style.display = 'inline-block';
+                document.getElementById('nextQuestionBtn').style.display = 'block';
             } else {
-                document.getElementById('finishBtn').style.display = 'inline-block';
+                document.getElementById('finishBtn').style.display = 'block';
             }
 
             updateScore();
@@ -998,7 +1015,11 @@
             document.getElementById('quizResult').style.display = 'none';
             document.getElementById('nextQuestionBtn').style.display = 'none';
             document.getElementById('finishBtn').style.display = 'none';
-            document.getElementById('submitBtn').style.display = 'inline-block';
+            document.getElementById('backToMenuBtn').style.display = 'none';
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.style.display = 'block';
+            }
         }
 
         // 次の問題へ
