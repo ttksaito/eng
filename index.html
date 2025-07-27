@@ -410,11 +410,16 @@
 
         .quiz-result {
             text-align: center;
-            padding: 0.8rem;
+            padding: 1rem;
             border-radius: 10px;
-            margin: 0.5rem 0;
-            font-weight: bold;
-            font-size: 0.9rem;
+            margin: 1rem 0;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+        }
+
+        .quiz-result .btn {
+            margin: 0.5rem;
+            min-width: 140px;
         }
 
         .quiz-result.correct {
@@ -626,13 +631,12 @@
                     <div id="quizCard" class="question">
                         <!-- クイズの内容がここに表示される -->
                     </div>
-                    <div id="quizResult" class="quiz-result" style="display: none;"></div>
+                    <div id="quizResult" class="quiz-result" style="display: none;">
+                        <button class="btn btn-primary" onclick="nextQuestion()" id="nextQuestionBtn" style="display: none;">次の問題</button>
+                        <button class="btn btn-secondary" onclick="finishTest()" id="finishBtn" style="display: none;">テスト終了</button>
+                    </div>
                     <div class="navigation">
                         <div class="progress" id="testProgress"></div>
-                        <div class="nav-buttons">
-                            <button class="btn btn-primary" onclick="nextQuestion()" id="nextQuestionBtn" style="display: none;">次の問題</button>
-                            <button class="btn btn-secondary" onclick="finishTest()" id="finishBtn" style="display: none;">テスト終了</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -949,10 +953,11 @@
             updateTestProgress();
             updateScore();
             
-            // 結果とボタンを初期化
-            document.getElementById('quizResult').style.display = 'none';
-            document.getElementById('nextQuestionBtn').style.display = 'none';
-            document.getElementById('finishBtn').style.display = 'none';
+            // 結果エリアを非表示
+            const quizResult = document.getElementById('quizResult');
+            if (quizResult) {
+                quizResult.style.display = 'none';
+            }
         }
 
         // 選択肢を選択
@@ -1005,36 +1010,14 @@
             updateScore();
         }
 
-        // クイズ結果を表示
+        // クイズ結果を表示（不要になったため削除）
         function showQuizResult(isCorrect, correctAnswer) {
-            const resultDiv = document.getElementById('quizResult');
-            resultDiv.className = `quiz-result ${isCorrect ? 'correct' : 'incorrect'}`;
-            resultDiv.textContent = isCorrect ? 
-                '正解です！' : 
-                `不正解です。正解は "${correctAnswer}" です。`;
-            resultDiv.style.display = 'block';
+            // この関数は使用しません
         }
 
-        // クイズ結果を非表示
+        // クイズ結果を非表示（不要になったため削除）
         function hideQuizResult() {
-            const quizResult = document.getElementById('quizResult');
-            const nextBtn = document.getElementById('nextQuestionBtn');
-            const finishBtn = document.getElementById('finishBtn');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            if (quizResult) quizResult.style.display = 'none';
-            if (nextBtn) {
-                nextBtn.style.display = 'none';
-                nextBtn.style.visibility = 'hidden';
-            }
-            if (finishBtn) {
-                finishBtn.style.display = 'none';
-                finishBtn.style.visibility = 'hidden';
-            }
-            if (submitBtn) {
-                submitBtn.style.display = 'block';
-                submitBtn.style.visibility = 'visible';
-            }
+            // この関数は使用しません
         }
 
         // 次の問題へ
