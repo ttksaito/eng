@@ -542,6 +542,8 @@
             .nav-buttons .btn {
                 width: 80%;
                 max-width: 200px;
+                display: block !important;
+                margin: 0 auto;
             }
 
             .quiz-container {
@@ -630,7 +632,6 @@
                         <div class="nav-buttons">
                             <button class="btn btn-primary" onclick="nextQuestion()" id="nextQuestionBtn" style="display: none;">次の問題</button>
                             <button class="btn btn-secondary" onclick="finishTest()" id="finishBtn" style="display: none;">テスト終了</button>
-                            <button class="btn btn-back" onclick="goBack()" id="backToMenuBtn" style="display: none;">メニューに戻る</button>
                         </div>
                     </div>
                 </div>
@@ -947,7 +948,11 @@
 
             updateTestProgress();
             updateScore();
-            hideQuizResult();
+            
+            // 結果とボタンを初期化
+            document.getElementById('quizResult').style.display = 'none';
+            document.getElementById('nextQuestionBtn').style.display = 'none';
+            document.getElementById('finishBtn').style.display = 'none';
         }
 
         // 選択肢を選択
@@ -1012,13 +1017,23 @@
 
         // クイズ結果を非表示
         function hideQuizResult() {
-            document.getElementById('quizResult').style.display = 'none';
-            document.getElementById('nextQuestionBtn').style.display = 'none';
-            document.getElementById('finishBtn').style.display = 'none';
-            document.getElementById('backToMenuBtn').style.display = 'none';
+            const quizResult = document.getElementById('quizResult');
+            const nextBtn = document.getElementById('nextQuestionBtn');
+            const finishBtn = document.getElementById('finishBtn');
             const submitBtn = document.getElementById('submitBtn');
+            
+            if (quizResult) quizResult.style.display = 'none';
+            if (nextBtn) {
+                nextBtn.style.display = 'none';
+                nextBtn.style.visibility = 'hidden';
+            }
+            if (finishBtn) {
+                finishBtn.style.display = 'none';
+                finishBtn.style.visibility = 'hidden';
+            }
             if (submitBtn) {
                 submitBtn.style.display = 'block';
+                submitBtn.style.visibility = 'visible';
             }
         }
 
