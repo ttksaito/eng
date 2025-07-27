@@ -819,7 +819,7 @@
             }
 
             .options {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 0.6rem;
             }
 
@@ -830,7 +830,8 @@
             }
 
             .navigation {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: space-between;
                 gap: 0.8rem;
                 margin-top: 0.5rem;
                 padding-top: 0.5rem;
@@ -969,6 +970,7 @@
                     <div id="quizResult" style="display: none;"></div>
                     <div class="navigation">
                         <div class="progress" id="testProgress"></div>
+                        <div class="score" id="scoreDisplay">0 / 0</div>
                     </div>
                 </div>
             </div>
