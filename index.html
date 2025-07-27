@@ -652,6 +652,7 @@
         }
 
         .score-display {
+            display: none; /* スコア表示ボックスを非表示 */
             text-align: center;
             background: #e9ecef;
             padding: 0.8rem;
@@ -970,7 +971,7 @@
                     <div id="quizResult" style="display: none;"></div>
                     <div class="navigation">
                         <div class="progress" id="testProgress"></div>
-                        <div class="score" id="scoreDisplay">0 / 0</div>
+                        <div class="progress" id="testScoreDisplay">0 / 0</div>
                     </div>
                 </div>
             </div>
@@ -1513,6 +1514,11 @@
         // スコアを更新
         function updateScore() {
             document.getElementById('scoreDisplay').textContent = `${score} / ${totalQuestions}`;
+            // テストモード下部のスコア表示も更新
+            const testScoreDisplay = document.getElementById('testScoreDisplay');
+            if (testScoreDisplay) {
+                testScoreDisplay.textContent = `${score} / ${totalQuestions}`;
+            }
         }
 
         // テスト終了
