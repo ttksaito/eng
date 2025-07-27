@@ -1,191 +1,1079 @@
 {
   "ability": {
-    "level": "A1",
-    "No":1,
+    "No": 1,
+    "level": "A2",
     "Pronunciation": {
       "symbol": "/əˈbɪləti/",
-      "Pronunciation_point1": "第2音節「bil」にアクセントを置く",
-      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
-      "Pronunciation_point3": "語尾の「ty」は/ti/ではなく/təi/で発音"
+      "Pronunciation_point1": "第2音節にアクセント：a-BI-li-ty",
+      "Pronunciation_point2": "最初の'a'は曖昧母音[ə]で発音",
+      "Pronunciation_point3": "語尾の'-ty'は軽く発音"
     },
-    "definition1": "何かを行うために必要な技能や才能",
-    "definition2": "特定のタスクを成功させる能力や資質",
-    "definition3": "身体的または精神的な機能や力",
-    "collocation1": "natural ability（天性の才能）",
-    "collocation2": "have the ability to（～する能力がある）",
-    "collocation3": "ability to learn（学習能力）",
-    "collocation4": "physical ability（身体能力）",
-    "collocation5": "develop one's ability（能力を伸ばす）",
-    "Example_sentence": "She has the ability to solve complex mathematical problems quickly.（彼女は複雑な数学の問題を素早く解く能力を持っている。）"
+    "definition1": "何かを行う力や技能（能力）",
+    "definition2": "特定の分野での才能や適性（才能）",
+    "collocation1": "natural ability（生まれつきの能力）",
+    "collocation2": "ability to learn（学習能力）",
+    "collocation3": "physical ability（身体能力）",
+    "collocation4": "have the ability（能力を持つ）",
+    "Example_sentence": "She has the ability to speak three languages fluently.（彼女は3つの言語を流暢に話す能力がある。）"
   },
+  
   "abroad": {
-    "level": "A1",
-    "No":2,
+    "No": 2,
+    "level": "A2",
     "Pronunciation": {
       "symbol": "/əˈbrɔːd/",
-      "Pronunciation_point1": "「broad」の部分にアクセントを置く",
-      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
-      "Pronunciation_point3": "「oa」は長い/ɔː/音で発音"
+      "Pronunciation_point1": "第2音節にアクセント：a-BROAD",
+      "Pronunciation_point2": "最初の'a'は曖昧母音[ə]",
+      "Pronunciation_point3": "'oa'は長母音[ɔː]で発音"
     },
-    "definition1": "自国以外の外国で、または外国に",
-    "definition2": "海外の場所や地域において",
+    "definition1": "自分の国以外の外国で（海外で）",
+    "definition2": "外国への、外国からの（海外の）",
     "collocation1": "go abroad（海外に行く）",
-    "collocation2": "study abroad（留学する）",
-    "collocation3": "travel abroad（海外旅行をする）",
-    "collocation4": "live abroad（海外に住む）",
-    "collocation5": "from abroad（海外から）",
-    "Example_sentence": "Many students choose to study abroad to experience different cultures.（多くの学生が異なる文化を体験するために留学を選ぶ。）"
+    "collocation2": "study abroad（海外留学する）",
+    "collocation3": "live abroad（海外に住む）",
+    "collocation4": "travel abroad（海外旅行する）",
+    "Example_sentence": "Many students want to study abroad to improve their English.（多くの学生が英語を上達させるために海外留学したがっている。）"
   },
+
   "accept": {
-    "level": "A1",
-    "No":3,
+    "No": 3,
+    "level": "A2",
     "Pronunciation": {
       "symbol": "/əkˈsept/",
-      "Pronunciation_point1": "第2音節「cept」にアクセントを置く",
-      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
-      "Pronunciation_point3": "「cc」は/k/音一つで発音"
+      "Pronunciation_point1": "第2音節にアクセント：ac-CEPT",
+      "Pronunciation_point2": "最初の'a'は曖昧母音[ə]",
+      "Pronunciation_point3": "'cc'は[k]音で発音"
     },
-    "definition1": "提供されたものを受け取ることに同意する",
-    "definition2": "状況や事実を現実として認める",
-    "definition3": "招待や申し出を承諾する",
+    "definition1": "提供されたものを受け取ることに同意する（受け入れる）",
+    "definition2": "状況や事実を認める（承認する）",
     "collocation1": "accept an offer（申し出を受け入れる）",
     "collocation2": "accept responsibility（責任を受け入れる）",
-    "collocation3": "accept a challenge（挑戦を受け入れる）",
+    "collocation3": "accept defeat（敗北を認める）",
     "collocation4": "widely accepted（広く受け入れられた）",
-    "collocation5": "accept payment（支払いを受け入れる）",
-    "Example_sentence": "I'm happy to accept your invitation to the wedding ceremony.（結婚式のご招待を喜んでお受けいたします。）"
+    "Example_sentence": "I'm happy to accept your invitation to the party.（あなたのパーティーへの招待を喜んで受け入れます。）"
   },
+
   "acceptable": {
-    "level": "A1",
-    "No":4,
+    "No": 4,
+    "level": "A2",
     "Pronunciation": {
       "symbol": "/əkˈseptəbl/",
-      "Pronunciation_point1": "第2音節「cept」にアクセントを置く",
-      "Pronunciation_point2": "語尾の「able」は/əbl/で発音",
-      "Pronunciation_point3": "4音節で区切って発音：/ək-ˈsep-tə-bl/"
+      "Pronunciation_point1": "第2音節にアクセント：ac-CEP-ta-ble",
+      "Pronunciation_point2": "語尾の'-able'は軽く発音",
+      "Pronunciation_point3": "中間の'a'は曖昧母音[ə]"
     },
-    "definition1": "満足できる標準に達している、受け入れ可能な",
-    "definition2": "適切で許容できる程度の",
-    "definition3": "社会的に認められる、妥当な",
+    "definition1": "満足できる、十分な（受け入れられる）",
+    "definition2": "許容できる範囲内の（許容できる）",
     "collocation1": "acceptable behavior（受け入れられる行動）",
     "collocation2": "acceptable level（許容レベル）",
     "collocation3": "socially acceptable（社会的に受け入れられる）",
-    "collocation4": "acceptable quality（受け入れ可能な品質）",
-    "collocation5": "find acceptable（受け入れ可能だと思う）",
-    "Example_sentence": "The quality of this product is acceptable for its price range.（この製品の品質は、その価格帯としては受け入れ可能である。）"
+    "collocation4": "find acceptable（受け入れられると思う）",
+    "Example_sentence": "Your work is acceptable, but it could be better.（あなたの仕事は受け入れられますが、もっと良くなる可能性があります。）"
   },
+
+  "accident": {
+    "No": 5,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈæksɪdənt/",
+      "Pronunciation_point1": "第1音節にアクセント：AC-ci-dent",
+      "Pronunciation_point2": "最初の'a'は短母音[æ]",
+      "Pronunciation_point3": "語尾の'-dent'ははっきりと発音"
+    },
+    "definition1": "予期しない不幸な出来事（事故）",
+    "definition2": "偶然起こった出来事（偶然）",
+    "collocation1": "car accident（自動車事故）",
+    "collocation2": "by accident（偶然に）",
+    "collocation3": "serious accident（深刻な事故）",
+    "collocation4": "have an accident（事故に遭う）",
+    "Example_sentence": "He broke the vase by accident while cleaning.（彼は掃除中に偶然花瓶を割ってしまった。）"
+  },
+
   "account": {
-    "level": "A1",
-    "No":5,
+    "No": 6,
+    "level": "A2",
     "Pronunciation": {
       "symbol": "/əˈkaʊnt/",
-      "Pronunciation_point1": "第2音節「count」にアクセントを置く",
-      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
-      "Pronunciation_point3": "「ou」は/aʊ/の二重母音で発音"
+      "Pronunciation_point1": "第2音節にアクセント：ac-COUNT",
+      "Pronunciation_point2": "'ou'は二重母音[aʊ]で発音",
+      "Pronunciation_point3": "語尾の'-nt'ははっきりと"
     },
-    "definition1": "銀行や会社における金銭の記録や管理",
-    "definition2": "説明や報告、記述",
-    "definition3": "重要性や価値を持つこと",
+    "definition1": "銀行での預金口座（口座）",
+    "definition2": "出来事の説明や報告（説明）",
     "collocation1": "bank account（銀行口座）",
-    "collocation2": "take into account（考慮に入れる）",
-    "collocation3": "account for（説明する、占める）",
-    "collocation4": "detailed account（詳細な説明）",
-    "collocation5": "open an account（口座を開設する）",
-    "Example_sentence": "Please take my suggestions into account when making your decision.（決定を下す際には私の提案を考慮に入れてください。）"
+    "collocation2": "open an account（口座を開く）",
+    "collocation3": "account for（〜の理由を説明する）",
+    "collocation4": "take into account（〜を考慮する）",
+    "Example_sentence": "I need to open a bank account before I start working.（働き始める前に銀行口座を開く必要がある。）"
   },
+
   "achieve": {
+    "No": 7,
     "level": "A2",
-    "No":6,
     "Pronunciation": {
       "symbol": "/əˈtʃiːv/",
-      "Pronunciation_point1": "第2音節「chieve」にアクセントを置く",
-      "Pronunciation_point2": "最初の「a」は曖昧母音/ə/で発音",
-      "Pronunciation_point3": "「ch」は/tʃ/音で発音"
+      "Pronunciation_point1": "第2音節にアクセント：a-CHIEVE",
+      "Pronunciation_point2": "'ch'は[tʃ]音で発音",
+      "Pronunciation_point3": "'ie'は長母音[iː]"
     },
-    "definition1": "努力や技能によって何かを成功させる",
-    "definition2": "目標や目的を達成する",
-    "definition3": "優れた結果を得る",
+    "definition1": "努力により目標を達成する（達成する）",
+    "definition2": "成功を収める（成し遂げる）",
     "collocation1": "achieve success（成功を収める）",
     "collocation2": "achieve a goal（目標を達成する）",
     "collocation3": "achieve results（結果を出す）",
-    "collocation4": "achieve excellence（優秀さを達成する）",
-    "collocation5": "achieve recognition（認知を得る）",
-    "Example_sentence": "Hard work and dedication helped her achieve her dream of becoming a doctor.（努力と献身によって、彼女は医師になる夢を実現した。）"
+    "collocation4": "hard to achieve（達成困難な）",
+    "Example_sentence": "She worked hard to achieve her dream of becoming a doctor.（彼女は医者になる夢を達成するために一生懸命働いた。）"
   },
-  "action": {
-    "level": "A1",
-    "No":7,
-    "Pronunciation": {
-      "symbol": "/ˈækʃən/",
-      "Pronunciation_point1": "第1音節「ac」にアクセントを置く",
-      "Pronunciation_point2": "「a」は短い/æ/音で発音",
-      "Pronunciation_point3": "「tion」は/ʃən/で発音"
-    },
-    "definition1": "何かを行う行為や過程",
-    "definition2": "具体的な行動や措置",
-    "definition3": "動きや活動",
-    "collocation1": "take action（行動を起こす）",
-    "collocation2": "immediate action（即座の行動）",
-    "collocation3": "course of action（行動方針）",
-    "collocation4": "action plan（行動計画）",
-    "collocation5": "legal action（法的措置）",
-    "Example_sentence": "The government must take immediate action to address climate change.（政府は気候変動に対処するため即座に行動を起こさなければならない。）"
-  },
-  "active": {
+
+  "across": {
+    "No": 8,
     "level": "A2",
-    "No":8,
     "Pronunciation": {
-      "symbol": "/ˈæktɪv/",
-      "Pronunciation_point1": "第1音節「ac」にアクセントを置く",
-      "Pronunciation_point2": "「a」は短い/æ/音で発音",
-      "Pronunciation_point3": "「tive」は/tɪv/で発音"
+      "symbol": "/əˈkrɒs/",
+      "Pronunciation_point1": "第2音節にアクセント：a-CROSS",
+      "Pronunciation_point2": "'o'は短母音[ɒ]（アメリカ英語では[ɔː]）",
+      "Pronunciation_point3": "'ss'は[s]音で発音"
     },
-    "definition1": "活発に動いている、エネルギッシュな",
-    "definition2": "積極的に参加している",
-    "definition3": "現在進行中の、作動している",
-    "collocation1": "active lifestyle（活動的なライフスタイル）",
-    "collocation2": "active participation（積極的な参加）",
-    "collocation3": "active member（活発なメンバー）",
-    "collocation4": "physically active（身体的に活発な）",
-    "collocation5": "active role（積極的な役割）",
-    "Example_sentence": "Regular exercise helps maintain an active and healthy lifestyle.（定期的な運動は活発で健康的なライフスタイルの維持に役立つ。）"
+    "definition1": "一方の側からもう一方の側へ（〜を横切って）",
+    "definition2": "向こう側に（〜の向こうに）",
+    "collocation1": "across the street（通りの向こう側）",
+    "collocation2": "across the world（世界中で）",
+    "collocation3": "come across（偶然出会う）",
+    "collocation4": "across from（〜の向かい側）",
+    "Example_sentence": "The school is just across the street from the library.（学校は図書館の通りの向こう側にあります。）"
   },
-  "activity": {
-    "level": "A1",
-    "No":9,
+
+  "act": {
+    "No": 9,
+    "level": "A2",
     "Pronunciation": {
-      "symbol": "/ækˈtɪvəti/",
-      "Pronunciation_point1": "第2音節「tiv」にアクセントを置く",
-      "Pronunciation_point2": "「a」は短い/æ/音で発音",
-      "Pronunciation_point3": "語尾「ty」は/ti/で発音"
+      "symbol": "/ækt/",
+      "Pronunciation_point1": "短い単音節語",
+      "Pronunciation_point2": "'a'は短母音[æ]",
+      "Pronunciation_point3": "語尾の'-ct'ははっきりと"
     },
-    "definition1": "特定の目的を持った行動や作業",
-    "definition2": "娯楽や運動などの活動",
-    "definition3": "忙しさや活発さの状態",
-    "collocation1": "outdoor activity（屋外活動）",
-    "collocation2": "physical activity（身体活動）",
-    "collocation3": "learning activity（学習活動）",
-    "collocation4": "social activity（社会活動）",
-    "collocation5": "business activity（事業活動）",
-    "Example_sentence": "Swimming is an excellent physical activity for people of all ages.（水泳はすべての年齢の人々にとって優れた身体活動である。）"
+    "definition1": "何かを行う（行動する）",
+    "definition2": "演技をする（演じる）",
+    "collocation1": "act quickly（素早く行動する）",
+    "collocation2": "act like（〜のように振る舞う）",
+    "collocation3": "act of kindness（親切な行為）",
+    "collocation4": "act in a play（劇で演じる）",
+    "Example_sentence": "You need to act fast if you want to catch the train.（電車に間に合いたいなら素早く行動する必要がある。）"
   },
-  "actual": {
-    "level": "B1",
-    "No":10,
+
+  "actually": {
+    "No": 10,
+    "level": "A2",
     "Pronunciation": {
-      "symbol": "/ˈæktʃuəl/",
-      "Pronunciation_point1": "第1音節「ac」にアクセントを置く",
-      "Pronunciation_point2": "「a」は短い/æ/音で発音",
-      "Pronunciation_point3": "「tual」は/tʃuəl/で発音"
+      "symbol": "/ˈæktʃuəli/",
+      "Pronunciation_point1": "第1音節にアクセント：AC-tu-al-ly",
+      "Pronunciation_point2": "'ch'は[tʃ]音",
+      "Pronunciation_point3": "4音節で発音"
     },
-    "definition1": "実際の、現実の（想像や理論ではない）",
-    "definition2": "真の、本当の",
-    "definition3": "現在存在する",
-    "collocation1": "actual fact（実際の事実）",
-    "collocation2": "actual cost（実際の費用）",
-    "collocation3": "actual situation（実際の状況）",
-    "collocation4": "actual results（実際の結果）",
-    "collocation5": "actual experience（実際の経験）",
-    "Example_sentence": "The actual cost of the project was much higher than the original estimate.（プロジェクトの実際の費用は当初の見積もりよりもはるかに高かった。）"
+    "definition1": "実際には、本当は（実は）",
+    "definition2": "驚きを表す（なんと）",
+    "collocation1": "actually believe（実際に信じている）",
+    "collocation2": "actually happened（実際に起こった）",
+    "collocation3": "actually quite（実はかなり）",
+    "collocation4": "actually think（実際に思う）",
+    "Example_sentence": "I thought he was angry, but actually he was just tired.（彼は怒っていると思ったが、実際はただ疲れていただけだった。）"
+  },
+
+  "addition": {
+    "No": 11,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈdɪʃn/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-DI-tion",
+      "Pronunciation_point2": "'ti'は[ʃ]音で発音",
+      "Pronunciation_point3": "最初の'a'は曖昧母音[ə]"
+    },
+    "definition1": "数を足すこと（足し算）",
+    "definition2": "何かを加えること（追加）",
+    "collocation1": "in addition（さらに）",
+    "collocation2": "in addition to（〜に加えて）",
+    "collocation3": "latest addition（最新の追加）",
+    "collocation4": "welcome addition（歓迎すべき追加）",
+    "Example_sentence": "In addition to English, she also speaks French.（英語に加えて、彼女はフランス語も話す。）"
+  },
+
+  "additional": {
+    "No": 12,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈdɪʃənl/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-DI-tion-al",
+      "Pronunciation_point2": "'ti'は[ʃ]音",
+      "Pronunciation_point3": "語尾の'-al'は軽く"
+    },
+    "definition1": "既にあるものに加えられる（追加の）",
+    "definition2": "さらなる、余分の（付加的な）",
+    "collocation1": "additional information（追加情報）",
+    "collocation2": "additional cost（追加費用）",
+    "collocation3": "additional support（追加支援）",
+    "collocation4": "additional time（追加時間）",
+    "Example_sentence": "You can buy additional storage for your phone.（携帯電話用の追加ストレージを購入できます。）"
+  },
+
+  "adjective": {
+    "No": 13,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈædʒɪktɪv/",
+      "Pronunciation_point1": "第1音節にアクセント：AD-jec-tive",
+      "Pronunciation_point2": "'j'は[dʒ]音で発音",
+      "Pronunciation_point3": "3音節で発音"
+    },
+    "definition1": "名詞を修飾する品詞（形容詞）",
+    "definition2": "性質や状態を表す語（形容詞）",
+    "collocation1": "descriptive adjective（記述形容詞）",
+    "collocation2": "comparative adjective（比較級形容詞）",
+    "collocation3": "possessive adjective（所有形容詞）",
+    "collocation4": "use an adjective（形容詞を使う）",
+    "Example_sentence": "In the sentence 'The red car is fast', both 'red' and 'fast' are adjectives.（「その赤い車は速い」という文では、'red'と'fast'の両方が形容詞である。）"
+  },
+
+  "adjust": {
+    "No": 14,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈdʒʌst/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-JUST",
+      "Pronunciation_point2": "'j'は[dʒ]音",
+      "Pronunciation_point3": "'u'は短母音[ʌ]"
+    },
+    "definition1": "より良く機能するように変更する（調整する）",
+    "definition2": "新しい状況に慣れる（適応する）",
+    "collocation1": "adjust to（〜に適応する）",
+    "collocation2": "adjust the volume（音量を調整する）",
+    "collocation3": "adjust settings（設定を調整する）",
+    "collocation4": "adjust quickly（素早く適応する）",
+    "Example_sentence": "It took me a few weeks to adjust to living in a new country.（新しい国での生活に慣れるのに数週間かかった。）"
+  },
+
+  "admire": {
+    "No": 15,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ədˈmaɪə(r)/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-MIRE",
+      "Pronunciation_point2": "'i'は二重母音[aɪ]",
+      "Pronunciation_point3": "語尾の'r'は軽く"
+    },
+    "definition1": "尊敬や賞賛の気持ちを持つ（感嘆する）",
+    "definition2": "美しいものを眺める（鑑賞する）",
+    "collocation1": "admire someone（誰かを尊敬する）",
+    "collocation2": "admire the view（景色を眺める）",
+    "collocation3": "greatly admire（大いに感嘆する）",
+    "collocation4": "admire courage（勇気を称賛する）",
+    "Example_sentence": "I really admire her dedication to helping others.（他人を助けることへの彼女の献身を本当に尊敬している。）"
+  },
+
+  "admit": {
+    "No": 16,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ədˈmɪt/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-MIT",
+      "Pronunciation_point2": "'i'は短母音[ɪ]",
+      "Pronunciation_point3": "語尾の'-t'ははっきりと"
+    },
+    "definition1": "真実であることを認める（認める）",
+    "definition2": "入ることを許可する（入学させる）",
+    "collocation1": "admit a mistake（間違いを認める）",
+    "collocation2": "admit to hospital（病院に入院させる）",
+    "collocation3": "admit defeat（敗北を認める）",
+    "collocation4": "refuse to admit（認めることを拒む）",
+    "Example_sentence": "He finally admitted that he had made an error.（彼はついに間違いを犯したと認めた。）"
+  },
+
+  "adult": {
+    "No": 17,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈædʌlt/",
+      "Pronunciation_point1": "第1音節にアクセント：A-dult",
+      "Pronunciation_point2": "'a'は短母音[æ]",
+      "Pronunciation_point3": "'u'は短母音[ʌ]"
+    },
+    "definition1": "完全に成長した人（大人）",
+    "definition2": "法的に成人した人（成人）",
+    "collocation1": "adult education（成人教育）",
+    "collocation2": "young adult（若い大人）",
+    "collocation3": "adult life（大人の生活）",
+    "collocation4": "become an adult（大人になる）",
+    "Example_sentence": "Children need adult supervision when swimming.（子供たちは泳ぐ時に大人の監督が必要です。）"
+  },
+
+  "advanced": {
+    "No": 18,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ədˈvɑːnst/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-VANCED",
+      "Pronunciation_point2": "'a'は長母音[ɑː]",
+      "Pronunciation_point3": "語尾の'-ced'ははっきりと"
+    },
+    "definition1": "高度な段階にある（上級の）",
+    "definition2": "最新の技術による（先進的な）",
+    "collocation1": "advanced level（上級レベル）",
+    "collocation2": "advanced technology（先進技術）",
+    "collocation3": "advanced course（上級コース）",
+    "collocation4": "advanced student（上級生）",
+    "Example_sentence": "This is an advanced English class for experienced learners.（これは経験豊富な学習者向けの上級英語クラスです。）"
+  },
+
+  "advantage": {
+    "No": 19,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ədˈvɑːntɪdʒ/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-VAN-tage",
+      "Pronunciation_point2": "'a'は長母音[ɑː]",
+      "Pronunciation_point3": "語尾は[ɪdʒ]で発音"
+    },
+    "definition1": "有利な条件や状況（利点）",
+    "definition2": "他より優れている点（優位性）",
+    "collocation1": "take advantage of（〜を利用する）",
+    "collocation2": "competitive advantage（競争優位）",
+    "collocation3": "have an advantage（優位に立つ）",
+    "collocation4": "clear advantage（明確な利点）",
+    "Example_sentence": "Being tall is an advantage when playing basketball.（背が高いことはバスケットボールをする時の利点です。）"
+  },
+
+  "adventure": {
+    "No": 20,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ədˈventʃə(r)/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-VEN-ture",
+      "Pronunciation_point2": "'ven'は[ven]で発音",
+      "Pronunciation_point3": "'ture'は[tʃə]で発音"
+    },
+    "definition1": "刺激的で危険な経験（冒険）",
+    "definition2": "珍しい体験（冒険的体験）",
+    "collocation1": "great adventure（大冒険）",
+    "collocation2": "adventure story（冒険小説）",
+    "collocation3": "sense of adventure（冒険心）",
+    "collocation4": "outdoor adventure（屋外での冒険）",
+    "Example_sentence": "Traveling alone to a foreign country was quite an adventure.（一人で外国に旅行することはかなりの冒険だった。）"
+  },
+  "advertisement": {
+    "No": 21,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ədˈvɜːtɪsmənt/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-VER-tise-ment",
+      "Pronunciation_point2": "'er'は[ɜː]で発音",
+      "Pronunciation_point3": "5音節の長い語"
+    },
+    "definition1": "商品やサービスを宣伝する告知（広告）",
+    "definition2": "公告や求人などの掲示（広告）",
+    "collocation1": "television advertisement（テレビ広告）",
+    "collocation2": "job advertisement（求人広告）",
+    "collocation3": "place an advertisement（広告を出す）",
+    "collocation4": "online advertisement（オンライン広告）",
+    "Example_sentence": "I saw an interesting job advertisement in the newspaper.（新聞で興味深い求人広告を見た。）"
+  },
+
+  "advertising": {
+    "No": 22,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈædvətaɪzɪŋ/",
+      "Pronunciation_point1": "第1音節にアクセント：AD-ver-tis-ing",
+      "Pronunciation_point2": "'i'は二重母音[aɪ]",
+      "Pronunciation_point3": "4音節で発音"
+    },
+    "definition1": "商品を宣伝する活動（広告業）",
+    "definition2": "広告を作成する業界（広告業界）",
+    "collocation1": "advertising agency（広告代理店）",
+    "collocation2": "advertising campaign（広告キャンペーン）",
+    "collocation3": "work in advertising（広告業界で働く）",
+    "collocation4": "advertising budget（広告予算）",
+    "Example_sentence": "She works in advertising and creates commercials for TV.（彼女は広告業界で働き、テレビCMを制作している。）"
+  },
+
+  "advice": {
+    "No": 23,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ədˈvaɪs/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-VICE",
+      "Pronunciation_point2": "'i'は二重母音[aɪ]",
+      "Pronunciation_point3": "語尾は[s]音（名詞）"
+    },
+    "definition1": "何をすべきかについての提案（助言）",
+    "definition2": "経験に基づく指導（アドバイス）",
+    "collocation1": "give advice（助言する）",
+    "collocation2": "take advice（助言を受け入れる）",
+    "collocation3": "ask for advice（助言を求める）",
+    "collocation4": "piece of advice（一つの助言）",
+    "Example_sentence": "Can you give me some advice about learning English?（英語学習について何かアドバイスをもらえますか？）"
+  },
+
+  "advise": {
+    "No": 24,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ədˈvaɪz/",
+      "Pronunciation_point1": "第2音節にアクセント：ad-VISE",
+      "Pronunciation_point2": "'i'は二重母音[aɪ]",
+      "Pronunciation_point3": "語尾は[z]音（動詞）"
+    },
+    "definition1": "何をすべきか提案する（助言する）",
+    "definition2": "専門的な指導をする（アドバイスする）",
+    "collocation1": "advise someone（誰かに助言する）",
+    "collocation2": "strongly advise（強く勧める）",
+    "collocation3": "advise against（〜に反対する）",
+    "collocation4": "advise caution（注意を促す）",
+    "Example_sentence": "I would advise you to study harder for the exam.（試験のためにもっと勉強することをお勧めします。）"
+  },
+
+  "affair": {
+    "No": 25,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈfeə(r)/",
+      "Pronunciation_point1": "第2音節にアクセント：af-FAIR",
+      "Pronunciation_point2": "'ai'は二重母音[eə]",
+      "Pronunciation_point3": "語尾の'r'は軽く"
+    },
+    "definition1": "個人的な問題や状況（事柄）",
+    "definition2": "不倫関係（不倫）",
+    "collocation1": "personal affair（個人的な事柄）",
+    "collocation2": "business affairs（業務）",
+    "collocation3": "foreign affairs（外交）",
+    "collocation4": "have an affair（不倫する）",
+    "Example_sentence": "The wedding was a simple affair with only close family.（結婚式は近親者だけの簡素な式だった。）"
+  },
+
+  "after": {
+    "No": 26,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈɑːftə(r)/",
+      "Pronunciation_point1": "第1音節にアクセント：AF-ter",
+      "Pronunciation_point2": "'a'は長母音[ɑː]",
+      "Pronunciation_point3": "語尾の'r'は軽く"
+    },
+    "definition1": "〜の後に、〜してから（後で）",
+    "definition2": "〜を追って（〜の後を）",
+    "collocation1": "after school（放課後）",
+    "collocation2": "after all（結局）",
+    "collocation3": "look after（世話をする）",
+    "collocation4": "day after day（来る日も来る日も）",
+    "Example_sentence": "Let's go for coffee after the meeting.（会議の後にコーヒーを飲みに行きましょう。）"
+  },
+
+  "against": {
+    "No": 27,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈɡenst/",
+      "Pronunciation_point1": "第2音節にアクセント：a-GAINST",
+      "Pronunciation_point2": "'ai'は[e]音で発音",
+      "Pronunciation_point3": "語尾の'-st'ははっきりと"
+    },
+    "definition1": "〜に反対して（〜に対して）",
+    "definition2": "〜にもたれて（〜に接して）",
+    "collocation1": "against the law（法律に反して）",
+    "collocation2": "against the wall（壁にもたれて）",
+    "collocation3": "fight against（〜と戦う）",
+    "collocation4": "vote against（〜に反対票を投じる）",
+    "Example_sentence": "Many people are against the new tax policy.（多くの人が新しい税制政策に反対している。）"
+  },
+
+  "aged": {
+    "No": 28,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/eɪdʒd/",
+      "Pronunciation_point1": "単音節語：AGED",
+      "Pronunciation_point2": "'a'は二重母音[eɪ]",
+      "Pronunciation_point3": "'g'は[dʒ]音で発音"
+    },
+    "definition1": "〜歳の（年齢が〜の）",
+    "definition2": "年を取った（高齢の）",
+    "collocation1": "aged 25（25歳の）",
+    "collocation2": "aged person（高齢者）",
+    "collocation3": "middle-aged（中年の）",
+    "collocation4": "aged between（〜歳から〜歳の間）",
+    "Example_sentence": "The course is designed for students aged 16 to 18.（このコースは16歳から18歳の学生向けに設計されています。）"
+  },
+
+  "agency": {
+    "No": 29,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈeɪdʒənsi/",
+      "Pronunciation_point1": "第1音節にアクセント：A-gen-cy",
+      "Pronunciation_point2": "'a'は二重母音[eɪ]",
+      "Pronunciation_point3": "'g'は[dʒ]音で発音"
+    },
+    "definition1": "特定のサービスを提供する組織（代理店）",
+    "definition2": "政府の部局（機関）",
+    "collocation1": "travel agency（旅行代理店）",
+    "collocation2": "employment agency（職業紹介所）",
+    "collocation3": "government agency（政府機関）",
+    "collocation4": "news agency（通信社）",
+    "Example_sentence": "I booked my vacation through a travel agency.（旅行代理店を通して休暇を予約した。）"
+  },
+
+  "agent": {
+    "No": 30,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈeɪdʒənt/",
+      "Pronunciation_point1": "第1音節にアクセント：A-gent",
+      "Pronunciation_point2": "'a'は二重母音[eɪ]",
+      "Pronunciation_point3": "'g'は[dʒ]音"
+    },
+    "definition1": "他人の代理で行動する人（代理人）",
+    "definition2": "特定の仕事をする専門家（エージェント）",
+    "collocation1": "real estate agent（不動産業者）",
+    "collocation2": "travel agent（旅行代理店員）",
+    "collocation3": "insurance agent（保険代理人）",
+    "collocation4": "secret agent（秘密諜報員）",
+    "Example_sentence": "The real estate agent showed us several houses yesterday.（不動産業者が昨日いくつかの家を見せてくれた。）"
+  },
+
+  "ahead": {
+    "No": 31,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈhed/",
+      "Pronunciation_point1": "第2音節にアクセント：a-HEAD",
+      "Pronunciation_point2": "'ea'は[e]音で発音",
+      "Pronunciation_point3": "語尾の'd'ははっきりと"
+    },
+    "definition1": "前方に、先に（前に）",
+    "definition2": "未来に（今後）",
+    "collocation1": "ahead of（〜より前に）",
+    "collocation2": "go ahead（先に進む）",
+    "collocation3": "plan ahead（前もって計画する）",
+    "collocation4": "straight ahead（まっすぐ前に）",
+    "Example_sentence": "The restaurant is just ahead on the right.（レストランは右側のすぐ前にあります。）"
+  },
+
+  "air": {
+    "No": 32,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/eə(r)/",
+      "Pronunciation_point1": "単音節語：AIR",
+      "Pronunciation_point2": "'ai'は二重母音[eə]",
+      "Pronunciation_point3": "語尾の'r'は軽く"
+    },
+    "definition1": "呼吸する気体（空気）",
+    "definition2": "空中、大気（空）",
+    "collocation1": "fresh air（新鮮な空気）",
+    "collocation2": "by air（飛行機で）",
+    "collocation3": "air conditioning（エアコン）",
+    "collocation4": "on the air（放送中の）",
+    "Example_sentence": "I love breathing the fresh mountain air.（新鮮な山の空気を吸うのが大好きです。）"
+  },
+
+  "aisle": {
+    "No": 33,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/aɪl/",
+      "Pronunciation_point1": "単音節語：AISLE",
+      "Pronunciation_point2": "'ai'は二重母音[aɪ]",
+      "Pronunciation_point3": "'s'は無音（発音しない）"
+    },
+    "definition1": "座席の間の通路（通路）",
+    "definition2": "店の商品棚の間の通路（通路）",
+    "collocation1": "aisle seat（通路側の席）",
+    "collocation2": "walk down the aisle（通路を歩く）",
+    "collocation3": "supermarket aisle（スーパーの通路）",
+    "collocation4": "wedding aisle（結婚式のバージンロード）",
+    "Example_sentence": "I prefer an aisle seat on long flights.（長距離フライトでは通路側の席を好みます。）"
+  },
+
+  "alarm": {
+    "No": 34,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈlɑːm/",
+      "Pronunciation_point1": "第2音節にアクセント：a-LARM",
+      "Pronunciation_point2": "'a'は長母音[ɑː]",
+      "Pronunciation_point3": "語尾の'm'ははっきりと"
+    },
+    "definition1": "危険を知らせる警報（警報）",
+    "definition2": "心配や恐れ（不安）",
+    "collocation1": "fire alarm（火災警報）",
+    "collocation2": "alarm clock（目覚まし時計）",
+    "collocation3": "set an alarm（アラームをセットする）",
+    "collocation4": "false alarm（誤報）",
+    "Example_sentence": "The fire alarm went off during the meeting.（会議中に火災警報が鳴った。）"
+  },
+
+  "alarm clock": {
+    "No": 35,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈlɑːm klɒk/",
+      "Pronunciation_point1": "第1語の第2音節にアクセント：a-LARM clock",
+      "Pronunciation_point2": "'o'は短母音[ɒ]",
+      "Pronunciation_point3": "2語の複合語"
+    },
+    "definition1": "決まった時刻に音で知らせる時計（目覚まし時計）",
+    "definition2": "起床時刻を知らせる装置（アラーム時計）",
+    "collocation1": "set the alarm clock（目覚まし時計をセットする）",
+    "collocation2": "alarm clock rings（目覚まし時計が鳴る）",
+    "collocation3": "digital alarm clock（デジタル目覚まし時計）",
+    "collocation4": "turn off alarm clock（目覚まし時計を止める）",
+    "Example_sentence": "I set my alarm clock for 7 AM every morning.（毎朝午前7時に目覚まし時計をセットしています。）"
+  },
+
+  "alive": {
+    "No": 36,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈlaɪv/",
+      "Pronunciation_point1": "第2音節にアクセント：a-LIVE",
+      "Pronunciation_point2": "'i'は二重母音[aɪ]",
+      "Pronunciation_point3": "語尾の'v'ははっきりと"
+    },
+    "definition1": "生きている（生存している）",
+    "definition2": "活発な、元気な（活気のある）",
+    "collocation1": "stay alive（生き続ける）",
+    "collocation2": "feel alive（生きていると感じる）",
+    "collocation3": "come alive（活気づく）",
+    "collocation4": "alive and well（元気で生きている）",
+    "Example_sentence": "The old tree is still alive after 100 years.（その古い木は100年経った今でも生きている。）"
+  },
+
+  "all": {
+    "No": 37,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ɔːl/",
+      "Pronunciation_point1": "単音節語：ALL",
+      "Pronunciation_point2": "'a'は長母音[ɔː]",
+      "Pronunciation_point3": "語尾の'll'ははっきりと"
+    },
+    "definition1": "全部の、すべての（全て）",
+    "definition2": "完全に（完全に）",
+    "collocation1": "all day（一日中）",
+    "collocation2": "all the time（いつも）",
+    "collocation3": "at all（全く）",
+    "collocation4": "all over（至る所で）",
+    "Example_sentence": "All students must wear uniforms to school.（すべての生徒は制服を着て学校に来なければならない。）"
+  },
+
+  "allow": {
+    "No": 38,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈlaʊ/",
+      "Pronunciation_point1": "第2音節にアクセント：al-LOW",
+      "Pronunciation_point2": "'ow'は二重母音[aʊ]",
+      "Pronunciation_point3": "語尾の'w'ははっきりと"
+    },
+    "definition1": "許可する（許す）",
+    "definition2": "可能にする（〜できるようにする）",
+    "collocation1": "allow someone to（誰かに〜することを許す）",
+    "collocation2": "not allowed（禁止されている）",
+    "collocation3": "allow time（時間を確保する）",
+    "collocation4": "allow access（アクセスを許可する）",
+    "Example_sentence": "The teacher doesn't allow students to use phones in class.（先生は授業中に生徒が携帯電話を使うことを許可していない。）"
+  },
+
+  "alone": {
+    "No": 39,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈləʊn/",
+      "Pronunciation_point1": "第2音節にアクセント：a-LONE",
+      "Pronunciation_point2": "'o'は二重母音[əʊ]",
+      "Pronunciation_point3": "語尾の'n'ははっきりと"
+    },
+    "definition1": "一人で（独りで）",
+    "definition2": "他に何もない（〜だけ）",
+    "collocation1": "live alone（一人暮らしする）",
+    "collocation2": "leave alone（そっとしておく）",
+    "collocation3": "all alone（全く一人で）",
+    "collocation4": "feel alone（孤独を感じる）",
+    "Example_sentence": "She prefers to work alone on difficult projects.（彼女は難しいプロジェクトでは一人で作業することを好む。）"
+  },
+
+  "along": {
+    "No": 40,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈlɒŋ/",
+      "Pronunciation_point1": "第2音節にアクセント：a-LONG",
+      "Pronunciation_point2": "'o'は短母音[ɒ]",
+      "Pronunciation_point3": "'ng'は[ŋ]音で発音"
+    },
+    "definition1": "〜に沿って（〜沿いに）",
+    "definition2": "一緒に（共に）",
+    "collocation1": "along with（〜と一緒に）",
+    "collocation2": "come along（一緒に来る）",
+    "collocation3": "get along（うまくやる）",
+    "collocation4": "all along（ずっと）",
+    "Example_sentence": "We walked along the beach at sunset.（夕日の中、私たちは海辺を歩いた。）"
+  },
+  "alright": {
+    "No": 41,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ɔːlˈraɪt/",
+      "Pronunciation_point1": "第2音節にアクセント：al-RIGHT",
+      "Pronunciation_point2": "'i'は二重母音[aɪ]",
+      "Pronunciation_point3": "2音節で発音"
+    },
+    "definition1": "大丈夫な、問題ない（良い）",
+    "definition2": "同意を表す（分かった）",
+    "collocation1": "feel alright（気分が良い）",
+    "collocation2": "alright then（それでは）",
+    "collocation3": "be alright（大丈夫である）",
+    "collocation4": "alright with me（私には問題ない）",
+    "Example_sentence": "Are you alright? You look tired.（大丈夫ですか？疲れているように見えます。）"
+  },
+
+  "although": {
+    "No": 42,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ɔːlˈðəʊ/",
+      "Pronunciation_point1": "第2音節にアクセント：al-THOUGH",
+      "Pronunciation_point2": "'th'は[ð]音で発音",
+      "Pronunciation_point3": "'ough'は[əʊ]で発音"
+    },
+    "definition1": "〜だけれども（〜にもかかわらず）",
+    "definition2": "対比を表す接続詞（しかし）",
+    "collocation1": "although it's true（それは事実だが）",
+    "collocation2": "although difficult（困難ではあるが）",
+    "collocation3": "although small（小さいけれども）",
+    "collocation4": "although expensive（高価だが）",
+    "Example_sentence": "Although it was raining, we decided to go hiking.（雨が降っていたが、私たちはハイキングに行くことにした。）"
+  },
+
+  "ambition": {
+    "No": 43,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/æmˈbɪʃn/",
+      "Pronunciation_point1": "第2音節にアクセント：am-BI-tion",
+      "Pronunciation_point2": "'ti'は[ʃ]音で発音",
+      "Pronunciation_point3": "3音節で発音"
+    },
+    "definition1": "成功への強い願望（野心）",
+    "definition2": "特定の目標への熱意（大志）",
+    "collocation1": "have ambition（野心を持つ）",
+    "collocation2": "personal ambition（個人的な野心）",
+    "collocation3": "achieve ambition（野心を達成する）",
+    "collocation4": "lack ambition（野心に欠ける）",
+    "Example_sentence": "Her ambition is to become a successful lawyer.（彼女の野心は成功した弁護士になることです。）"
+  },
+
+  "among": {
+    "No": 44,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈmʌŋ/",
+      "Pronunciation_point1": "第2音節にアクセント：a-MONG",
+      "Pronunciation_point2": "'o'は短母音[ʌ]",
+      "Pronunciation_point3": "'ng'は[ŋ]音"
+    },
+    "definition1": "〜の間に（3つ以上の中で）",
+    "definition2": "〜の仲間として（〜の中で）",
+    "collocation1": "among friends（友達の間で）",
+    "collocation2": "among other things（とりわけ）",
+    "collocation3": "among the best（最高の中の一つ）",
+    "collocation4": "choose among（〜の中から選ぶ）",
+    "Example_sentence": "She is popular among her classmates.（彼女はクラスメートの間で人気がある。）"
+  },
+
+  "amused": {
+    "No": 45,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈmjuːzd/",
+      "Pronunciation_point1": "第2音節にアクセント：a-MUSED",
+      "Pronunciation_point2": "'u'は長母音[uː]",
+      "Pronunciation_point3": "語尾の'-ed'は[d]音"
+    },
+    "definition1": "面白がっている（楽しんでいる）",
+    "definition2": "おかしいと思っている（愉快に思う）",
+    "collocation1": "highly amused（大いに面白がっている）",
+    "collocation2": "amused by（〜を面白がって）",
+    "collocation3": "seem amused（面白がっているようだ）",
+    "collocation4": "look amused（愉快そうに見える）",
+    "Example_sentence": "The children were amused by the funny clown.（子供たちは面白いピエロを見て楽しんでいた。）"
+  },
+
+  "amusement": {
+    "No": 46,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈmjuːzmənt/",
+      "Pronunciation_point1": "第2音節にアクセント：a-MUSE-ment",
+      "Pronunciation_point2": "'u'は長母音[uː]",
+      "Pronunciation_point3": "3音節で発音"
+    },
+    "definition1": "楽しみ、娯楽（娯楽）",
+    "definition2": "面白がること（愉快）",
+    "collocation1": "amusement park（遊園地）",
+    "collocation2": "for amusement（娯楽のために）",
+    "collocation3": "source of amusement（楽しみの源）",
+    "collocation4": "much amusement（大いなる楽しみ）",
+    "Example_sentence": "Reading books is her favorite form of amusement.（読書は彼女の好きな娯楽です。）"
+  },
+
+  "ancestor": {
+    "No": 47,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈænsestə(r)/",
+      "Pronunciation_point1": "第1音節にアクセント：AN-ces-tor",
+      "Pronunciation_point2": "'a'は短母音[æ]",
+      "Pronunciation_point3": "語尾の'r'は軽く"
+    },
+    "definition1": "先祖、祖先（先祖）",
+    "definition2": "以前の世代の家族（祖先）",
+    "collocation1": "ancient ancestor（古代の先祖）",
+    "collocation2": "common ancestor（共通の祖先）",
+    "collocation3": "ancestor worship（先祖崇拝）",
+    "collocation4": "trace ancestors（先祖を辿る）",
+    "Example_sentence": "My ancestors came to this country over 100 years ago.（私の先祖は100年以上前にこの国にやってきた。）"
+  },
+
+  "ancient": {
+    "No": 48,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈeɪnʃənt/",
+      "Pronunciation_point1": "第1音節にアクセント：AN-cient",
+      "Pronunciation_point2": "'ai'は二重母音[eɪ]",
+      "Pronunciation_point3": "'ci'は[ʃ]音で発音"
+    },
+    "definition1": "とても古い時代の（古代の）",
+    "definition2": "非常に古くからある（太古の）",
+    "collocation1": "ancient history（古代史）",
+    "collocation2": "ancient civilization（古代文明）",
+    "collocation3": "ancient times（古代）",
+    "collocation4": "ancient building（古代建築）",
+    "Example_sentence": "We visited the ancient ruins of a Roman temple.（私たちは古代ローマ神殿の遺跡を訪れた。）"
+  },
+
+  "angel": {
+    "No": 49,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈeɪndʒəl/",
+      "Pronunciation_point1": "第1音節にアクセント：AN-gel",
+      "Pronunciation_point2": "'a'は二重母音[eɪ]",
+      "Pronunciation_point3": "'g'は[dʒ]音で発音"
+    },
+    "definition1": "神の使者である霊的存在（天使）",
+    "definition2": "親切で善良な人（天使のような人）",
+    "collocation1": "guardian angel（守護天使）",
+    "collocation2": "angel wings（天使の翼）",
+    "collocation3": "fallen angel（堕天使）",
+    "collocation4": "like an angel（天使のように）",
+    "Example_sentence": "She has been an angel, helping me through difficult times.（彼女は天使のように、困難な時期に私を助けてくれた。）"
+  },
+
+  "angrily": {
+    "No": 50,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈæŋɡrɪli/",
+      "Pronunciation_point1": "第1音節にアクセント：ANG-ri-ly",
+      "Pronunciation_point2": "'ng'は[ŋ]音で発音",
+      "Pronunciation_point3": "語尾の'-ly'は軽く発音"
+    },
+    "definition1": "怒った様子で（怒って）",
+    "definition2": "腹を立てて（憤慨して）",
+    "collocation1": "speak angrily（怒って話す）",
+    "collocation2": "react angrily（怒って反応する）",
+    "collocation3": "angrily protest（怒って抗議する）",
+    "collocation4": "look angrily（怒った顔で見る）",
+    "Example_sentence": "He angrily slammed the door and left the room.（彼は怒ってドアをバタンと閉めて部屋を出て行った。）"
+  },
+
+  "ankle": {
+    "No": 51,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈæŋkl/",
+      "Pronunciation_point1": "第1音節にアクセント：AN-kle",
+      "Pronunciation_point2": "'ng'は[ŋ]音",
+      "Pronunciation_point3": "語尾の'l'ははっきりと"
+    },
+    "definition1": "足首の関節部分（足首）",
+    "definition2": "脚と足をつなぐ部分（くるぶし）",
+    "collocation1": "sprain ankle（足首をひねる）",
+    "collocation2": "ankle injury（足首の怪我）",
+    "collocation3": "ankle boots（アンクルブーツ）",
+    "collocation4": "twist ankle（足首をひねる）",
+    "Example_sentence": "She hurt her ankle while playing tennis yesterday.（彼女は昨日テニスをしていて足首を痛めた。）"
+  },
+
+  "anniversary": {
+    "No": 52,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˌænɪˈvɜːsəri/",
+      "Pronunciation_point1": "第3音節にアクセント：an-ni-VER-sa-ry",
+      "Pronunciation_point2": "'er'は[ɜː]で発音",
+      "Pronunciation_point3": "5音節の長い語"
+    },
+    "definition1": "毎年の記念日（記念日）",
+    "definition2": "特別な出来事の年次記念（周年記念）",
+    "collocation1": "wedding anniversary（結婚記念日）",
+    "collocation2": "anniversary gift（記念日の贈り物）",
+    "collocation3": "celebrate anniversary（記念日を祝う）",
+    "collocation4": "anniversary party（記念日パーティー）",
+    "Example_sentence": "They are celebrating their 10th wedding anniversary next month.（彼らは来月結婚10周年記念を祝う予定です。）"
+  },
+
+  "annoy": {
+    "No": 53,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈnɔɪ/",
+      "Pronunciation_point1": "第2音節にアクセント：an-NOY",
+      "Pronunciation_point2": "'oy'は二重母音[ɔɪ]",
+      "Pronunciation_point3": "2音節で発音"
+    },
+    "definition1": "人をいらいらさせる（困らせる）",
+    "definition2": "迷惑をかける（うっとうしがらせる）",
+    "collocation1": "really annoy（本当にいらいらさせる）",
+    "collocation2": "annoy someone（誰かを困らせる）",
+    "collocation3": "get annoyed（いらいらする）",
+    "collocation4": "slightly annoyed（少しいらいらした）",
+    "Example_sentence": "The loud music from next door really annoys me.（隣からの大きな音楽が本当にうるさくて困る。）"
+  },
+
+  "annoying": {
+    "No": 54,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈnɔɪɪŋ/",
+      "Pronunciation_point1": "第2音節にアクセント：an-NOY-ing",
+      "Pronunciation_point2": "'oy'は二重母音[ɔɪ]",
+      "Pronunciation_point3": "3音節で発音"
+    },
+    "definition1": "いらいらさせる（うっとうしい）",
+    "definition2": "迷惑な（煩わしい）",
+    "collocation1": "really annoying（本当にうっとうしい）",
+    "collocation2": "annoying habit（迷惑な癖）",
+    "collocation3": "find annoying（うっとうしいと思う）",
+    "collocation4": "annoying noise（迷惑な音）",
+    "Example_sentence": "It's annoying when people talk loudly on their phones in public.（公共の場で大声で電話する人がいるとうっとうしい。）"
+  },
+
+  "another": {
+    "No": 55,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈnʌðə(r)/",
+      "Pronunciation_point1": "第2音節にアクセント：a-NO-ther",
+      "Pronunciation_point2": "'th'は[ð]音で発音",
+      "Pronunciation_point3": "語尾の'r'は軽く"
+    },
+    "definition1": "もう一つの、別の（もう一つの）",
+    "definition2": "追加の（さらなる）",
+    "collocation1": "another day（別の日）",
+    "collocation2": "another chance（もう一度の機会）",
+    "collocation3": "one another（お互い）",
+    "collocation4": "another time（別の時）",
+    "Example_sentence": "Would you like another cup of coffee?（もう一杯コーヒーはいかがですか？）"
+  },
+
+  "anxious": {
+    "No": 56,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈæŋkʃəs/",
+      "Pronunciation_point1": "第1音節にアクセント：ANX-ious",
+      "Pronunciation_point2": "'ng'は[ŋ]音",
+      "Pronunciation_point3": "'x'は[ks]音で発音"
+    },
+    "definition1": "心配している（不安な）",
+    "definition2": "切望している（熱望する）",
+    "collocation1": "feel anxious（不安を感じる）",
+    "collocation2": "anxious about（〜について心配な）",
+    "collocation3": "anxious to（〜したがっている）",
+    "collocation4": "get anxious（不安になる）",
+    "Example_sentence": "She feels anxious about her job interview tomorrow.（彼女は明日の就職面接について不安に感じている。）"
+  },
+
+  "anymore": {
+    "No": 57,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˌeniˈmɔː(r)/",
+      "Pronunciation_point1": "第3音節にアクセント：a-ny-MORE",
+      "Pronunciation_point2": "'any'は[eni]で発音",
+      "Pronunciation_point3": "'ore'は[ɔː]で発音"
+    },
+    "definition1": "もはや〜ない（もう〜ない）",
+    "definition2": "今後は〜ない（これ以上〜ない）",
+    "collocation1": "not anymore（もうしない）",
+    "collocation2": "never anymore（二度と〜ない）",
+    "collocation3": "can't anymore（もうできない）",
+    "collocation4": "won't anymore（もうしないつもり）",
+    "Example_sentence": "I don't live in Tokyo anymore; I moved to Osaka last year.（もう東京には住んでいません。去年大阪に引っ越しました。）"
+  },
+
+  "anyway": {
+    "No": 58,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈeniweɪ/",
+      "Pronunciation_point1": "第1音節にアクセント：A-ny-way",
+      "Pronunciation_point2": "'any'は[eni]で発音",
+      "Pronunciation_point3": "'way'は[weɪ]で発音"
+    },
+    "definition1": "とにかく（いずれにしても）",
+    "definition2": "話題を変える時に使う（ところで）",
+    "collocation1": "anyway, let's（とにかく、〜しよう）",
+    "collocation2": "but anyway（でもとにかく）",
+    "collocation3": "anyway, as I said（とにかく、言ったように）",
+    "collocation4": "anyway, moving on（とにかく、次に進もう）",
+    "Example_sentence": "It's raining, but we're going to the park anyway.（雨が降っているが、とにかく公園に行くつもりです。）"
+  },
+
+  "anywhere": {
+    "No": 59,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/ˈeniweə(r)/",
+      "Pronunciation_point1": "第1音節にアクセント：A-ny-where",
+      "Pronunciation_point2": "'any'は[eni]で発音",
+      "Pronunciation_point3": "'where'は[weə]で発音"
+    },
+    "definition1": "どこでも（どこへでも）",
+    "definition2": "どこか（どこかに）",
+    "collocation1": "anywhere you want（あなたが望むどこでも）",
+    "collocation2": "not anywhere（どこにも〜ない）",
+    "collocation3": "anywhere else（他のどこか）",
+    "collocation4": "go anywhere（どこへでも行く）",
+    "Example_sentence": "You can sit anywhere you like in this restaurant.（このレストランではお好きなところにお座りください。）"
+  },
+
+  "apart": {
+    "No": 60,
+    "level": "A2",
+    "Pronunciation": {
+      "symbol": "/əˈpɑːt/",
+      "Pronunciation_point1": "第2音節にアクセント：a-PART",
+      "Pronunciation_point2": "'a'は長母音[ɑː]",
+      "Pronunciation_point3": "語尾の't'ははっきりと"
+    },
+    "definition1": "離れて（別々に）",
+    "definition2": "バラバラに（分離して）",
+    "collocation1": "apart from（〜を除いて）",
+    "collocation2": "fall apart（バラバラになる）",
+    "collocation3": "live apart（別々に住む）",
+    "collocation4": "set apart（区別する）",
+    "Example_sentence": "The two brothers live apart but call each other every week.（二人の兄弟は別々に住んでいるが、毎週電話で話している。）"
   }
 }
