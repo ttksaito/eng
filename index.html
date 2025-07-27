@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英単語学習アプリ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 800px;
+            transition: all 0.3s ease;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        .range-selector {
+            text-align: center;
+        }
+
+        .range-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .range-option {
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .range-option:hover {
+            border-color: #007bff;
+            background: #f0f8ff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+        }
+
+        .range-option.selected {
+            border-color: #007bff;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+
+        .range-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .range-detail {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.8rem;
+        }
+
+        .range-words {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .range-inputs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .range-inputs label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .range-inputs input {
+            width: 80px;
+            padding: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .range-inputs span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .mode-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+        }
+
+        .btn-back {
+            background: #6c757d;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-back:hover {
+            background: #5a6268;
+        }
+
+        .word-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .word-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .word-level {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .pronunciation {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #007bff;
+        }
+
+        .pronunciation-symbol {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .play-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn:hover {
+            background: #218838;
+        }
+
+        .pronunciation-points {
+            text-align: left;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .definitions, .collocations {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .definitions h3, .collocations h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .definitions ul, .collocations ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .definitions li, .collocations li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .definitions li:last-child, .collocations li:last-child {
+            border-bottom: none;
+        }
+
+        .example-sentence {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .progress {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .question {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .blank {
+            background: #007bff;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .option {
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .option:hover {
+            border-color: #007bff;
+            background: #f0f8ff;
+        }
+
+        .option.selected {
+            border-color: #007bff;
+            background: #007bff;
+            color: white;
+        }
+
+        .option.correct {
+            border-color: #28a745;
+            background: #28a745;
+            color: white;
+        }
+
+        .option.incorrect {
+            border-color: #dc3545;
+            background: #dc3545;
+            color: white;
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        .quiz-result.correct {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .quiz-result.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .score-display {
+            text-align: center;
+            background: #e9ecef;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .score-display h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: center;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                margin: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .word-title {
+                font-size: 2rem;
+            }
+
+            .range-inputs {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .range-options {
+                margin: 1rem 0;
+            }
+
+            .range-option {
+                padding: 1rem;
+            }
+
+            .range-title {
+                font-size: 1.1rem;
+            }
+
+            .mode-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>英単語学習アプリ</h1>
+            <p>効率的な英単語学習をサポート</p>
+        </div>
+
+        <div class="content">
+            <!-- 範囲選択画面 -->
+            <div id="rangeScreen" class="screen active">
+                <div class="range-selector">
+                    <h2>学習範囲を選択してください</h2>
+                    <div class="range-options">
+                        <div class="range-option" onclick="selectRange(1, 10)">
+                            <div class="range-title">第1セット</div>
+                            <div class="range-detail">単語 1〜10</div>
+                            <div class="range-words">ability, abroad, accept, acceptable, account, achieve, action, active, activity, actual</div>
+                        </div>
+                    </div>
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+                    <div class="mode-buttons">
+                        <button class="btn btn-primary" onclick="startLearningMode()" id="learningBtn" disabled>学習モード</button>
+                        <button class="btn btn-secondary" onclick="startTestMode()" id="testBtn" disabled>テストモード</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 学習モード画面 -->
+            <div id="learningScreen" class="screen">
+                <button class="btn btn-back" onclick="goBack()">← 戻る</button>
+                <div id="wordCard" class="word-card">
+                    <!-- 単語カードの内容がここに表示される -->
+                </div>
+                <div class="navigation">
+                    <div class="progress" id="learningProgress"></div>
+                    <div class="nav-buttons">
+                        <button class="btn btn-primary" onclick="previousWord()" id="prevBtn">前へ</button>
+                        <button class="btn btn-primary" onclick="nextWord()" id="nextBtn">次へ</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- テストモード画面 -->
+            <div id="testScreen" class="screen">
+                <button class="btn btn-back" onclick="goBack()">← 戻る</button>
+                <div class="quiz-container">
+                    <div class="score-display">
+                        <h3>スコア</h3>
+                        <div class="score" id="scoreDisplay">0 / 0</div>
+                    </div>
+                    <div id="quizCard" class="question">
+                        <!-- クイズの内容がここに表示される -->
+                    </div>
+                    <div id="quizResult" class="quiz-result" style="display: none;"></div>
+                    <div class="navigation">
+                        <div class="progress" id="testProgress"></div>
+                        <div class="nav-buttons">
+                            <button class="btn btn-primary" onclick="nextQuestion()" id="nextQuestionBtn" style="display: none;">次の問題</button>
+                            <button class="btn btn-secondary" onclick="finishTest()" id="finishBtn" style="display: none;">テスト終了</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let wordsData = {};
+        let currentWordList = [];
+        let currentIndex = 0;
+        let startNo = 1;
+        let endNo = 10;
+        let selectedRange = null;
+        let quizQuestions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let totalQuestions = 0;
+
+        // データベースから単語データを読み込み
+        async function loadWordsData() {
+            try {
+                const response = await fetch('database/word.json');
+                wordsData = await response.json();
+                console.log('単語データを読み込みました:', Object.keys(wordsData).length, '単語');
+            } catch (error) {
+                console.error('単語データの読み込みに失敗しました:', error);
+                showError('単語データの読み込みに失敗しました。database/word.jsonファイルを確認してください。');
+            }
+        }
+
+        // エラーメッセージを表示
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        // エラーメッセージを非表示
+        function hideError() {
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        // 範囲を選択
+        function selectRange(start, end) {
+            // 既存の選択を解除
+            document.querySelectorAll('.range-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // 新しい選択を設定
+            event.target.closest('.range-option').classList.add('selected');
+            selectedRange = { start, end };
+            startNo = start;
+            endNo = end;
+            
+            // ボタンを有効化
+            document.getElementById('learningBtn').disabled = false;
+            document.getElementById('testBtn').disabled = false;
+        }
+
+        // 範囲を検証
+        function validateRange() {
+            if (!selectedRange) {
+                showError('学習範囲を選択してください。');
+                return false;
+            }
+            
+            hideError();
+            return true;
+        }
+
+        // 音声再生機能（単語用）
+        function playPronunciation(word) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(word);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.8;
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('お使いのブラウザは音声再生に対応していません。');
+            }
+        }
+
+        // 音声再生機能（例文用）
+        function playExampleSentence(sentence) {
+            if ('speechSynthesis' in window) {
+                // HTMLタグを除去して英語部分のみを抽出
+                const englishText = sentence.replace(/（.*?）/g, '').replace(/<[^>]*>/g, '').trim();
+                const utterance = new SpeechSynthesisUtterance(englishText);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.7; // 例文は少しゆっくり
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('お使いのブラウザは音声再生に対応していません。');
+            }
+        }
+
+        // 指定範囲の単語リストを作成
+        function createWordList() {
+            currentWordList = [];
+            for (const [wordKey, wordData] of Object.entries(wordsData)) {
+                if (wordData.No >= startNo && wordData.No <= endNo) {
+                    currentWordList.push({ key: wordKey, data: wordData });
+                }
+            }
+            currentWordList.sort((a, b) => a.data.No - b.data.No);
+        }
+
+        // 学習モード開始
+        function startLearningMode() {
+            if (!validateRange()) return;
+            createWordList();
+            
+            if (currentWordList.length === 0) {
+                showError('指定された範囲に単語が見つかりません。');
+                return;
+            }
+
+            currentIndex = 0;
+            showScreen('learningScreen');
+            displayWord();
+        }
+
+        // 単語カードを表示
+        function displayWord() {
+            const word = currentWordList[currentIndex];
+            const wordCard = document.getElementById('wordCard');
+            
+            const levelColors = {
+                'A1': '#28a745',
+                'A2': '#ffc107',
+                'B1': '#dc3545'
+            };
+
+            wordCard.innerHTML = `
+                <div class="word-title">${word.key}</div>
+                <div class="word-level" style="background: ${levelColors[word.data.level] || '#6c757d'};">
+                    ${word.data.level}
+                </div>
+                
+                <div class="pronunciation">
+                    <div class="pronunciation-symbol">
+                        ${word.data.Pronunciation.symbol}
+                        <button class="play-btn" onclick="playPronunciation('${word.key}')">▶</button>
+                    </div>
+                    <div class="pronunciation-points">
+                        <div>• ${word.data.Pronunciation.Pronunciation_point1}</div>
+                        <div>• ${word.data.Pronunciation.Pronunciation_point2}</div>
+                        <div>• ${word.data.Pronunciation.Pronunciation_point3}</div>
+                    </div>
+                </div>
+
+                <div class="definitions">
+                    <h3>📖 意味・定義</h3>
+                    <ul>
+                        <li><strong>1.</strong> ${word.data.definition1}</li>
+                        <li><strong>2.</strong> ${word.data.definition2}</li>
+                        <li><strong>3.</strong> ${word.data.definition3}</li>
+                    </ul>
+                </div>
+
+                <div class="collocations">
+                    <h3>🔗 よく使われる表現</h3>
+                    <ul>
+                        <li>${word.data.collocation1}</li>
+                        <li>${word.data.collocation2}</li>
+                        <li>${word.data.collocation3}</li>
+                        <li>${word.data.collocation4}</li>
+                        <li>${word.data.collocation5}</li>
+                    </ul>
+                </div>
+
+                <div class="example-sentence">
+                    <strong>📝 例文:</strong><br>
+                    ${word.data.Example_sentence}
+                    <button class="play-btn" onclick="playExampleSentence(\`${word.data.Example_sentence.replace(/[`'"]/g, '')}\`)" style="margin-left: 1rem;">▶</button>
+                </div>
+            `;
+
+            updateLearningProgress();
+            updateNavigationButtons();
+        }
+
+        // 音声再生機能
+        function playPronunciation(word) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(word);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.8;
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('お使いのブラウザは音声再生に対応していません。');
+            }
+        }
+
+        // 学習進捗を更新
+        function updateLearningProgress() {
+            document.getElementById('learningProgress').textContent = 
+                `${currentIndex + 1} / ${currentWordList.length}`;
+        }
+
+        // ナビゲーションボタンを更新
+        function updateNavigationButtons() {
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex === currentWordList.length - 1;
+        }
+
+        // 前の単語へ
+        function previousWord() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                displayWord();
+            }
+        }
+
+        // 次の単語へ
+        function nextWord() {
+            if (currentIndex < currentWordList.length - 1) {
+                currentIndex++;
+                displayWord();
+            }
+        }
+
+        // テストモード開始
+        function startTestMode() {
+            if (!validateRange()) return;
+            createWordList();
+            
+            if (currentWordList.length === 0) {
+                showError('指定された範囲に単語が見つかりません。');
+                return;
+            }
+
+            generateQuizQuestions();
+            currentQuestionIndex = 0;
+            score = 0;
+            showScreen('testScreen');
+            displayQuestion();
+        }
+
+        // クイズ問題を生成
+        function generateQuizQuestions() {
+            quizQuestions = [];
+            
+            for (const word of currentWordList) {
+                const sentence = word.data.Example_sentence;
+                const wordKey = word.key;
+                
+                // 例文から単語を見つけて穴抜きにする
+                const regex = new RegExp(`\\b${wordKey}\\b`, 'gi');
+                const match = sentence.match(regex);
+                
+                if (match) {
+                    const questionText = sentence.replace(regex, '<span class="blank">_____</span>');
+                    
+                    // 選択肢を生成（正解 + 他の3つの単語）
+                    const options = [wordKey];
+                    const otherWords = currentWordList.filter(w => w.key !== wordKey);
+                    
+                    // ランダムに3つの不正解選択肢を追加
+                    while (options.length < 4 && otherWords.length > 0) {
+                        const randomIndex = Math.floor(Math.random() * otherWords.length);
+                        const randomWord = otherWords.splice(randomIndex, 1)[0];
+                        options.push(randomWord.key);
+                    }
+
+                    // 選択肢をシャッフル
+                    for (let i = options.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [options[i], options[j]] = [options[j], options[i]];
+                    }
+
+                    quizQuestions.push({
+                        question: questionText,
+                        options: options,
+                        correct: wordKey,
+                        answered: false,
+                        selectedAnswer: null
+                    });
+                }
+            }
+
+            // 問題をシャッフル
+            for (let i = quizQuestions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [quizQuestions[i], quizQuestions[j]] = [quizQuestions[j], quizQuestions[i]];
+            }
+
+            totalQuestions = quizQuestions.length;
+        }
+
+        // 問題を表示
+        function displayQuestion() {
+            if (currentQuestionIndex >= quizQuestions.length) {
+                finishTest();
+                return;
+            }
+
+            const question = quizQuestions[currentQuestionIndex];
+            const quizCard = document.getElementById('quizCard');
+
+            quizCard.innerHTML = `
+                <div class="question-text">${question.question}</div>
+                <div class="options">
+                    ${question.options.map((option, index) => 
+                        `<div class="option" onclick="selectOption(${index})" data-option="${option}">
+                            ${option}
+                        </div>`
+                    ).join('')}
+                </div>
+                <button class="btn btn-primary" onclick="submitAnswer()" id="submitBtn" disabled>回答する</button>
+            `;
+
+            updateTestProgress();
+            updateScore();
+            hideQuizResult();
+        }
+
+        // 選択肢を選択
+        function selectOption(index) {
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => option.classList.remove('selected'));
+            options[index].classList.add('selected');
+            
+            const question = quizQuestions[currentQuestionIndex];
+            question.selectedAnswer = question.options[index];
+            
+            document.getElementById('submitBtn').disabled = false;
+        }
+
+        // 回答を送信
+        function submitAnswer() {
+            const question = quizQuestions[currentQuestionIndex];
+            if (!question.selectedAnswer) return;
+
+            question.answered = true;
+            const isCorrect = question.selectedAnswer === question.correct;
+            
+            if (isCorrect) {
+                score++;
+            }
+
+            // 選択肢の色を更新
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                const optionText = option.getAttribute('data-option');
+                if (optionText === question.correct) {
+                    option.classList.add('correct');
+                } else if (optionText === question.selectedAnswer && !isCorrect) {
+                    option.classList.add('incorrect');
+                }
+                option.style.pointerEvents = 'none';
+            });
+
+            // 結果を表示
+            showQuizResult(isCorrect, question.correct);
+            
+            // ボタンを更新
+            document.getElementById('submitBtn').style.display = 'none';
+            if (currentQuestionIndex < quizQuestions.length - 1) {
+                document.getElementById('nextQuestionBtn').style.display = 'inline-block';
+            } else {
+                document.getElementById('finishBtn').style.display = 'inline-block';
+            }
+
+            updateScore();
+        }
+
+        // クイズ結果を表示
+        function showQuizResult(isCorrect, correctAnswer) {
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.className = `quiz-result ${isCorrect ? 'correct' : 'incorrect'}`;
+            resultDiv.textContent = isCorrect ? 
+                '正解です！' : 
+                `不正解です。正解は "${correctAnswer}" です。`;
+            resultDiv.style.display = 'block';
+        }
+
+        // クイズ結果を非表示
+        function hideQuizResult() {
+            document.getElementById('quizResult').style.display = 'none';
+            document.getElementById('nextQuestionBtn').style.display = 'none';
+            document.getElementById('finishBtn').style.display = 'none';
+            document.getElementById('submitBtn').style.display = 'inline-block';
+        }
+
+        // 次の問題へ
+        function nextQuestion() {
+            currentQuestionIndex++;
+            displayQuestion();
+        }
+
+        // テスト進捗を更新
+        function updateTestProgress() {
+            document.getElementById('testProgress').textContent = 
+                `問題 ${currentQuestionIndex + 1} / ${totalQuestions}`;
+        }
+
+        // スコアを更新
+        function updateScore() {
+            document.getElementById('scoreDisplay').textContent = `${score} / ${totalQuestions}`;
+        }
+
+        // テスト終了
+        function finishTest() {
+            const percentage = Math.round((score / totalQuestions) * 100);
+            let message = `テスト完了！\n\n`;
+            message += `正解数: ${score} / ${totalQuestions}\n`;
+            message += `正答率: ${percentage}%\n\n`;
+            
+            if (percentage >= 80) {
+                message += '素晴らしい成績です！';
+            } else if (percentage >= 60) {
+                message += 'よく頑張りました！';
+            } else {
+                message += 'もう一度復習してみましょう。';
+            }
+
+            alert(message);
+            goBack();
+        }
+
+        // 画面を表示
+        function showScreen(screenId) {
+            const screens = document.querySelectorAll('.screen');
+            screens.forEach(screen => screen.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        // 戻る
+        function goBack() {
+            showScreen('rangeScreen');
+            currentIndex = 0;
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedRange = null;
+            document.getElementById('learningBtn').disabled = true;
+            document.getElementById('testBtn').disabled = true;
+            document.querySelectorAll('.range-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            hideError();
+        }
+
+        // ページ読み込み時に単語データを読み込み
+        window.addEventListener('load', loadWordsData);
+    </script>
+</body>
+</html>
