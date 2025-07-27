@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+.quiz-buttons {
+                text-align: center;
+                margin-top: 0.8rem;
+            }
+
+            .quiz-buttons .btn {
+                margin: 0.3rem;
+                min-width: 100px;
+                width: 80%;
+                max-width: 200px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0.5rem;
+            }<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -344,6 +358,7 @@
             border-radius: 10px;
             margin-bottom: 1rem;
             overflow: hidden;
+            width: 100%;
         }
 
         .quiz-tab {
@@ -356,11 +371,13 @@
             border: none;
             font-weight: bold;
             font-size: 0.9rem;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .quiz-tab.active {
-            background: #007bff;
-            color: white;
+            background: #007bff !important;
+            color: white !important;
         }
 
         .quiz-tab:hover:not(.active) {
@@ -369,10 +386,12 @@
 
         .tab-content {
             display: none;
+            flex: 1;
+            overflow: hidden;
         }
 
         .tab-content.active {
-            display: block;
+            display: block !important;
         }
 
         .word-info {
@@ -476,6 +495,11 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .word-info .example-sentence .play-btn {
+            flex-shrink: 0;
         }
 
         .question {
@@ -829,22 +853,37 @@
 
         // タブを切り替え
         function switchTab(tabName) {
+            console.log('Switching to tab:', tabName); // デバッグ用
+            
             // タブボタンの状態を更新
-            document.querySelectorAll('.quiz-tab').forEach(tab => {
+            const tabs = document.querySelectorAll('.quiz-tab');
+            tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
             
             // タブコンテンツの表示を更新
-            document.querySelectorAll('.tab-content').forEach(content => {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
                 content.classList.remove('active');
+                content.style.display = 'none';
             });
             
             if (tabName === 'quiz') {
-                document.querySelector('.quiz-tab:first-child').classList.add('active');
-                document.getElementById('quizTab').classList.add('active');
+                const quizTab = document.querySelector('.quiz-tab:first-child');
+                const quizContent = document.getElementById('quizTab');
+                if (quizTab) quizTab.classList.add('active');
+                if (quizContent) {
+                    quizContent.classList.add('active');
+                    quizContent.style.display = 'block';
+                }
             } else if (tabName === 'study') {
-                document.querySelector('.quiz-tab:last-child').classList.add('active');
-                document.getElementById('studyTab').classList.add('active');
+                const studyTab = document.querySelector('.quiz-tab:last-child');
+                const studyContent = document.getElementById('studyTab');
+                if (studyTab) studyTab.classList.add('active');
+                if (studyContent) {
+                    studyContent.classList.add('active');
+                    studyContent.style.display = 'block';
+                }
                 displayCurrentWordInfo();
             }
         }
